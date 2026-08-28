@@ -111,6 +111,7 @@ Usuário não cadastrado
 Usuário cadastrado
         ↓
   Recuperar senha
+
 ## 3. ⚙️ SISTEMA — Ator Automático
 
 ### Papel
