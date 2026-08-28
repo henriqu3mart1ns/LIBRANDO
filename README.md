@@ -103,7 +103,7 @@ Isso ocorre porque a recuperação de senha exige uma conta existente e um e-mai
 
 O fluxo correto é:
 
-```text
+
 Usuário não cadastrado
         ↓
     Criar conta
