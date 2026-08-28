@@ -52,11 +52,6 @@ Também pode acessar os recursos de acessibilidade em Libras disponibilizados pe
 | **UPDATE** | ❌ | Ainda não possui uma conta para alterar. |
 | **DELETE** | ❌ | Não possui uma conta cadastrada para excluir. |
 
-**Regra importante:**
-
-O **Usuário não cadastrado NÃO possui acesso à funcionalidade "Recuperar senha"**, pois essa funcionalidade exige uma conta existente e um e-mail associado a ela.
-
----
 
 ### 3. ⚙️ SISTEMA — Ator Automático
 
