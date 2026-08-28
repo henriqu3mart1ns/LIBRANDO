@@ -16,7 +16,6 @@ Pode:
 - Solicitar o login;
 - Visualizar ou ocultar a senha;
 - Solicitar recuperação de senha;
-- Optar por permanecer conectado, quando disponível;
 - Encerrar sua sessão por meio do logout.
 
 **Permissões:**
