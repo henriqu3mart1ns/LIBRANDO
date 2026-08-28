@@ -111,3 +111,78 @@ Usuário não cadastrado
 Usuário cadastrado
         ↓
   Recuperar senha
+## 3. ⚙️ SISTEMA — Ator Automático
+
+### Papel
+
+Executar automaticamente as operações necessárias para realizar a autenticação, garantir a segurança do acesso e controlar a sessão dos usuários da rede social.
+
+### Responsabilidade
+
+O sistema é responsável por processar as informações fornecidas pelo usuário durante o login e aplicar as regras definidas para permitir ou impedir o acesso à rede social.
+
+Durante o processo de autenticação, o sistema deve:
+
+- Validar os campos de e-mail e senha;
+- Verificar se os campos obrigatórios foram preenchidos;
+- Validar o formato do e-mail;
+- Verificar se o e-mail informado está cadastrado;
+- Verificar se a senha corresponde à conta;
+- Verificar se a conta está ativa;
+- Verificar se o usuário possui permissão de acesso;
+- Impedir o acesso quando as credenciais forem inválidas;
+- Impedir o acesso quando a conta estiver desativada;
+- Controlar tentativas excessivas de login;
+- Apresentar mensagens de feedback ao usuário em caso de erro;
+- Criar uma sessão segura após uma autenticação válida;
+- Redirecionar o usuário autenticado para a página principal da rede social;
+- Permitir o encerramento da sessão por meio do logout;
+- Participar do processo de recuperação e redefinição de senha;
+- Armazenar as senhas utilizando mecanismo de hash seguro;
+- Utilizar comunicação segura por meio de HTTPS.
+
+### Permissões — CRUD
+
+| Operação   | Permissão | Justificativa |
+| ---------- | :-------: | --------------------------------------------------------------------- |
+| **CREATE** |     ✅     | O sistema cria uma sessão segura após a autenticação válida do usuário. |
+| **READ**   |     ✅     | O sistema consulta as informações necessárias para validar e autenticar o usuário. |
+| **UPDATE** |     ✅     | O sistema participa da atualização da senha durante o processo de recuperação. |
+| **DELETE** |     ✅     | O sistema encerra a sessão do usuário quando ocorre o logout. |
+
+### 🔐 Regras de Segurança
+
+O sistema deve garantir que:
+
+- Senhas não sejam armazenadas em texto puro;
+- As senhas sejam protegidas por mecanismo de hash seguro;
+- A comunicação entre usuário e sistema seja protegida por HTTPS;
+- Tentativas excessivas de login sejam controladas;
+- Usuários com contas desativadas não consigam acessar a rede social;
+- Credenciais inválidas não permitam o acesso à plataforma.
+
+### 🔄 Fluxo básico de autenticação
+
+```text
+Usuário cadastrado
+        ↓
+  Informa e-mail
+        ↓
+   Informa senha
+        ↓
+Sistema valida os dados
+        ↓
+Sistema verifica credenciais
+        ↓
+Sistema verifica status da conta
+        ↓
+   ┌────┴────┐
+   ↓         ↓
+Válida    Inválida
+   ↓         ↓
+Criar      Negar
+sessão     acesso
+   ↓
+Redirecionar
+para página
+principal
