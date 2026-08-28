@@ -40,8 +40,6 @@ O usuário não cadastrado ainda não possui uma conta na plataforma. Portanto, 
 
 A partir da tela de login, pode selecionar a opção **"Criar uma conta"** e ser direcionado para o formulário de cadastro.
 
-Também pode acessar os recursos de acessibilidade em Libras disponibilizados pela plataforma.
-
 **Permissões:**
 
 | Operação | Permissão | Justificativa |
