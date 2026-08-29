@@ -123,3 +123,42 @@ O sistema deve garantir que:
 - Tentativas excessivas de login sejam controladas;
 - Usuários com contas desativadas não consigam acessar a rede social;
 - Credenciais inválidas não permitam o acesso à plataforma.
+
+E esse você coloca por último, como 4° ator depois do 3° ator que é sistema:
+
+### 4. 👨‍💼 ADMINISTRADOR — Ator Secundário
+
+**Papel:**  
+Realizar o login e acessar as funcionalidades administrativas da rede social.
+
+**Responsabilidade:**
+
+O administrador possui uma conta cadastrada na plataforma e utiliza o mesmo processo de autenticação dos demais usuários. A diferença está nas permissões concedidas após a autenticação.
+
+Durante o login, o administrador deve:
+
+- Informar o e-mail cadastrado;
+- Informar a senha;
+- Solicitar o login;
+- Ter suas credenciais validadas pelo sistema;
+- Ter o status da conta verificado;
+- Ter seu perfil de administrador identificado pelo sistema;
+- Acessar a área administrativa após uma autenticação válida.
+
+Após o login, o administrador poderá realizar atividades específicas de gerenciamento da plataforma, de acordo com suas permissões, como:
+
+- Gerenciar usuários;
+- Visualizar informações dos usuários;
+- Gerenciar ou desativar contas;
+- Moderar conteúdos publicados na rede social;
+- Analisar denúncias;
+- Aplicar medidas administrativas previstas pelo sistema.
+
+**Permissões — CRUD:**
+
+| Operação | Permissão | Justificativa |
+|---|:---:|---|
+| **CREATE** | ✅ | Pode realizar operações administrativas que envolvam a criação de registros, quando previstas pelo sistema. |
+| **READ** | ✅ | Pode consultar informações necessárias para administração e moderação da plataforma. |
+| **UPDATE** | ✅ | Pode alterar informações ou status de usuários e conteúdos conforme suas permissões administrativas. |
+| **DELETE** | ✅ | Pode excluir ou remover registros e conteúdos quando essa ação estiver prevista para a administração da plataforma. |
