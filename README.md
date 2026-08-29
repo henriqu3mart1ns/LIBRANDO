@@ -100,7 +100,7 @@ O sistema deve permitir que recepcionistas cadastrem novos hóspedes com dados e
 
 
 
-# 2.📋  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
+## 📋 2.  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
 
 ## **Descrição Detalhada**
 
