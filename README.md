@@ -161,3 +161,159 @@ Após o login, o administrador poderá realizar atividades específicas de geren
 | **READ** | ✅ | Pode consultar informações necessárias para administração e moderação da plataforma. |
 | **UPDATE** | ✅ | Pode alterar informações ou status de usuários e conteúdos conforme suas permissões administrativas. |
 | **DELETE** | ✅ | Pode excluir ou remover registros e conteúdos quando essa ação estiver prevista para a administração da plataforma. |
+
+# 🔄 3. ESPECIFICAÇÃO DE CASOS DE USO + REQUISITOS NÃO-FUNCIONAIS (20%)
+
+**Objetivo:** Descrever detalhadamente como o requisito da tela de login é executado, apresentando pré-condições, pós-condições, fluxo principal, fluxos alternativos, regras de negócio e requisitos não-funcionais.
+
+## 📌 Caso de Uso
+
+**Caso de Uso (UC-001): Realizar Login**
+
+**Requisito Funcional:** RF — Tela de Login da Rede Social
+
+### Atores Envolvidos
+
+- 👤 **Usuário Cadastrado** — Ator Principal
+- 👨‍💼 **Administrador** — Ator Secundário
+- ⚙️ **Sistema** — Ator Automático
+
+## 🔹 Pré-Condições
+
+- ✅ O usuário deve possuir uma conta cadastrada;
+- ✅ O usuário deve possuir um e-mail válido associado à sua conta;
+- ✅ O usuário deve possuir uma senha cadastrada;
+- ✅ A conta do usuário deve estar ativa;
+- ✅ O sistema deve estar disponível;
+- ✅ O banco de dados deve estar acessível;
+- ✅ O usuário deve estar na tela de login da rede social.
+
+## 🔹 Pós-Condições (Sucesso)
+
+- ✅ As credenciais do usuário são validadas;
+- ✅ A conta do usuário é identificada;
+- ✅ O sistema verifica se a conta está ativa;
+- ✅ O sistema identifica o perfil do usuário;
+- ✅ Uma sessão segura é criada;
+- ✅ O usuário é autenticado;
+- ✅ O usuário é direcionado para a página principal da rede social;
+- ✅ Caso seja Administrador, suas permissões administrativas são carregadas.
+
+## 🔹 Pós-Condições (Falha)
+
+- ❌ O usuário não é autenticado;
+- ❌ Uma sessão não é criada;
+- ❌ O acesso à rede social é negado;
+- ✅ Uma mensagem de erro é apresentada;
+- ✅ O usuário permanece na tela de login;
+- ✅ A tentativa pode ser registrada para fins de segurança.
+
+## 🔄 Fluxo Principal
+
+1. Usuário cadastrado acessa a tela de login da rede social.
+2. Sistema apresenta os campos de **E-mail** e **Senha**.
+3. Usuário informa seu e-mail cadastrado.
+4. Sistema verifica se o campo de e-mail foi preenchido corretamente.
+5. Usuário informa sua senha.
+6. Sistema verifica se o campo de senha foi preenchido.
+7. Usuário clica no botão **"Entrar"**.
+8. Sistema valida os dados informados.
+9. Sistema verifica se o e-mail está cadastrado.
+10. Sistema verifica se a senha corresponde à conta.
+11. Sistema verifica se a conta está ativa.
+12. Sistema identifica o perfil associado à conta.
+13. Sistema autentica o usuário.
+14. Sistema cria uma sessão segura para o usuário.
+15. Sistema registra o acesso, quando previsto pelas regras de segurança.
+16. Sistema redireciona o usuário para a página principal da rede social.
+17. Usuário acessa a plataforma de acordo com suas permissões.
+18. Caso o usuário seja Administrador, o sistema disponibiliza as funcionalidades administrativas permitidas para seu perfil.
+
+# 🔀 Fluxos Alternativos
+
+## Fluxo Alternativo A1 — E-mail ou senha inválidos
+
+1. Sistema identifica que as credenciais informadas são inválidas.
+2. Sistema impede a autenticação do usuário.
+3. Sistema não cria uma sessão.
+4. Sistema apresenta uma mensagem de erro.
+5. Usuário permanece na tela de login.
+6. Usuário pode corrigir os dados e realizar uma nova tentativa.
+
+## Fluxo Alternativo A2 — Conta desativada
+
+1. Sistema identifica que a conta associada ao e-mail está desativada.
+2. Sistema impede a autenticação.
+3. Sistema não cria uma sessão para o usuário.
+4. Sistema informa que a conta está desativada.
+5. Sistema orienta o usuário a entrar em contato com o suporte, quando aplicável.
+
+**Mensagem sugerida:**  
+
+## Fluxo Alternativo A3 — E-mail não cadastrado
+
+1. Sistema verifica que não existe uma conta associada ao e-mail informado.
+2. Sistema impede a autenticação.
+3. Sistema não cria uma sessão.
+4. Sistema informa que não foi encontrada uma conta para aquele e-mail.
+5. Sistema disponibiliza a opção **"Criar uma conta"**.
+6. Usuário pode iniciar o processo de cadastro.
+
+**Mensagem sugerida:**  
+
+## Fluxo Alternativo A4 — Campos obrigatórios não preenchidos
+
+1. Sistema identifica que o campo de e-mail está vazio ou inválido.
+2. Sistema destaca o campo que apresenta erro.
+3. Sistema apresenta uma mensagem orientando o preenchimento correto.
+4. Usuário corrige o campo.
+5. Sistema realiza novamente a validação.
+
+## Fluxo Alternativo A5 — Recuperação de senha
+
+1. Usuário cadastrado seleciona a opção **"Esqueci minha senha"**.
+2. Sistema solicita o e-mail associado à conta.
+3. Usuário informa o e-mail.
+4. Sistema verifica se o e-mail está associado a uma conta.
+5. Sistema inicia o processo de recuperação de senha.
+6. Usuário recebe as instruções necessárias para redefinir sua senha.
+7. Usuário define uma nova senha.
+8. Sistema atualiza a senha da conta.
+9. Usuário retorna à tela de login e pode realizar uma nova tentativa.
+
+## Fluxo Alternativo A6 — Falha de conexão
+
+1. Sistema tenta realizar a validação das credenciais.
+2. Sistema identifica uma falha de comunicação com o banco de dados ou servidor.
+3. Sistema não consegue concluir a autenticação.
+4. Sistema impede a criação da sessão.
+5. Sistema apresenta uma mensagem informando que o serviço está temporariamente indisponível.
+6. Usuário pode tentar realizar o login novamente posteriormente.
+
+# 📋 Regras de Negócio (RN)
+
+| ID | Regra | Descrição |
+|:---:|:---|:---|
+| **RN-001** | E-mail Obrigatório | O usuário deve informar um e-mail para realizar o login. |
+| **RN-002** | Senha Obrigatória | O usuário deve informar uma senha para realizar o login. |
+| **RN-003** | E-mail Cadastrado | O e-mail informado deve estar associado a uma conta existente no sistema. |
+| **RN-004** | Credenciais Válidas | O e-mail e a senha informados devem corresponder aos dados cadastrados. |
+| **RN-005** | Conta Ativa | Apenas contas ativas podem realizar login na rede social. |
+| **RN-006** | Sessão de Usuário | Uma sessão deve ser criada somente após uma autenticação válida. |
+| **RN-007** | Recuperação de Senha | Somente usuários que possuem uma conta cadastrada podem iniciar a recuperação de senha. |
+| **RN-08** | Perfil do Usuário | Após a autenticação, o sistema deve identificar o perfil do usuário e aplicar suas respectivas permissões. |
+| **RN-09** | Administrador | O Administrador utiliza o mesmo processo de login do usuário cadastrado, diferenciando-se pelas permissões administrativas após a autenticação. |
+| **RN-10** | Tentativas de Login | O sistema deve controlar tentativas excessivas de autenticação para aumentar a segurança das contas. |
+
+---
+
+# ⚙️ Requisitos Não-Funcionais (RNF)
+
+| ID | Atributo | Requisito | Métrica | Justificativa |
+|:---:|:---|:---|:---|:---|
+| **RNF-001** | Performance | O sistema deve responder às solicitações de login em até 2 segundos em condições normais de operação. | Tempo de resposta | Evitar que o usuário fique aguardando durante a autenticação. |
+| **RNF-002** | Segurança | As senhas dos usuários devem ser armazenadas utilizando mecanismo seguro de hash. | Senhas não armazenadas em texto puro | Proteger as credenciais dos usuários contra acesso indevido. |
+| **RNF-003** | Disponibilidade | A funcionalidade de login deve estar disponível durante o funcionamento normal da plataforma. | Disponibilidade do serviço | Permitir que os usuários consigam acessar a rede social. |
+| **RNF-004** | Acessibilidade | A tela de login deve disponibilizar recursos de acessibilidade adequados ao público-alvo, incluindo recursos em Libras quando previstos. | Recursos de acessibilidade disponíveis | Facilitar o acesso à plataforma. |
+| **RNF-005** | Usabilidade | A tela deve apresentar campos e mensagens de erro de forma clara e objetiva. | Clareza das mensagens | Facilitar a realização do login e a correção de erros. |
+| **RNF-006** | Segurança de Sessão | O sistema deve criar uma sessão segura somente após a autenticação válida. | Sessões autenticadas corretamente | Evitar acesso não autorizado às contas dos usuários. |
