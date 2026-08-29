@@ -12,6 +12,74 @@
 | 5 | [Angel Pacheco] | QA / SecDevOps | — | [angeldanylo35@gmail.com] |
 | 6 | [Angel Pacheco] | Fullstack (opcional) | — | [angeldanylo35@gmail.com] |
 
+### 1.2 Identificação
+
+- **NOME_DO_PROJETO:** [LIBRANDO]
+  - 
+
+- **DESCRICAO_BREVE:** [1-2 linhas sobre o que o sistema faz]
+  - *Exemplo: Sistema web para gerenciamento completo de hóspedes, reservas, check-in/check-out e faturamento de hotel.*
+
+### 1.3 Localização dos Artefatos
+
+- **LINK_REPOSITORIO_GITHUB:** https://github.com/[seu-usuario]/[seu-repo]
+- **BRANCH_PRINCIPAL:** main ou develop
+- **LINK_APLICACAO_DEPLOY:** https://[seu-projeto].github.io (GitHub Pages) ou Vercel, Netlify, etc.
+- **LINK_BANCO_DADOS:** [Supabase, Firebase, MongoDB Atlas, etc.] (com acesso de leitura para professor)
+- **LINK_API_SWAGGER:** https://[seu-backend]/api-docs (Documentação OpenAPI/Swagger)
+- **LINK_DEMONSTRAÇÃO:** [URL funcional da aplicação em produção]
+
+---
+
+## 2. ESTRUTURA DE DIRETÓRIOS DO PROJETO
+
+```
+seu-projeto-arquitetura/
+├── docs/
+│   ├── requisitos/
+│   │   ├── RF-001-cadastro-hospede.md (ENTREGA - DOCUMENTO ÚNICO)
+│   │   ├── RF-002-alterar-hospede.md  (ENTREGA - DOCUMENTO ÚNICO)
+│   │   └── ... (RF-XXX)
+│   │
+│   └── api/
+│       └── swagger.json (ou openapi.json)
+│
+├── src/
+│   ├── rf-001-cadastro-hospede/
+│   │   ├── index.html (HTML com CSS embutido)
+│   │   ├── app.js (Código-fonte JavaScript/Linguagem escolhida)
+│   │   └── README.md (Como executar)
+│   │
+│   ├── rf-002-alterar-hospede/
+│   │   ├── index.html
+│   │   ├── app.js
+│   │   └── README.md
+│   └── ... (rf-XXX)
+│
+├── database/
+│   ├── ddl/
+│   │   ├── rf-001-hospedes-ddl.sql (Script DDL - CREATE TABLE)
+│   │   ├── rf-002-hospedes-alter-ddl.sql
+│   │   └── ... (scripts por requisito)
+│   │
+│   └── seeds/
+│       ├── hospedes-seeds.sql (Dados de exemplo)
+│       └── ...
+│
+├── .github/
+│   └── workflows/ (CI/CD - opcional)
+│
+├── README.md (guia geral do projeto)
+└── .gitignore (incluir .env, node_modules, etc)
+```
+
+**Localização dos Arquivos:**
+- **Documentação:** `docs/requisitos/RF-NNN-nome-requisito.md` (UM ÚNICO DOCUMENTO POR RF)
+- **Código-fonte:** `src/rf-NNN-nome-requisito/` (HTML + CSS + JS/TypeScript/etc)
+- **Scripts BD:** `database/ddl/rf-NNN-nome-requisito-ddl.sql`
+- **API Swagger:** `docs/api/swagger.json` ou URL do Swagger UI
+- **Aplicação Funcional:** Deployed em GitHub Pages ou nuvem com BD integrado
+
 
 # 2.📋  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
 
