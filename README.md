@@ -7,10 +7,10 @@
 |:---:|:---|:---|:---|:---|
 | 1 | [André Mendes] | Scrum Master | Fullstack | [andre53774636@edu.df.senac.br] |
 | 2 | [Eduardo] | Desenvolvedor Front-End | — | [eduardo59381426@edu.df.senac.br] |
-| 3 | [Gabriel Ludovico / Vitor Hugo Silva] | Desenvolvedor Back-End | — | [vitor59422706@edu.df.senac.br] |
+| 3 | [Gabriel Ludovico / Vitor Hugo Silva] | Desenvolvedor Back-End | — | [gabriel49414966@edu.df.senac.br / vitor59422706@edu.df.senac.br] |
 | 4 | [Henrique Alves] | DBA / Banco de Dados | — | [henrique51782196@edu.df.senac.br] |
-| 5 | [Angel Pacheco] | QA / SecDevOps | — | [angeldanylo35@gmail.com] |
-| 6 | [Angel Pacheco] | Fullstack (opcional) | — | [angeldanylo35@gmail.com] |
+| 5 | [Angel Pacheco] | QA / SecDevOps | — | [angel59381406@edu.df.senac.br] |
+| 6 | [Angel Pacheco] | Fullstack (opcional) | — | [angel59381406@edu.df.senac.br] |
 
 ### 1.2 Identificação
 
