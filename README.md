@@ -2,7 +2,6 @@
 
 ### 1.1 Composição da Equipe
 
-Preencha a tabela abaixo com os integrantes do seu grupo:
 
 | ID | Nome Completo | Papel Primário | Papel Secundário | E-mail / Contato |
 |:---:|:---|:---|:---|:---|
@@ -14,7 +13,7 @@ Preencha a tabela abaixo com os integrantes do seu grupo:
 | 6 | [Angel Pacheco] | Fullstack (opcional) | — | [angeldanylo35@gmail.com] |
 
 
-# 📋  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
+# 2.📋  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
 
 ## **Descrição Detalhada**
 
