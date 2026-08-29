@@ -124,7 +124,6 @@ O sistema deve garantir que:
 - Usuários com contas desativadas não consigam acessar a rede social;
 - Credenciais inválidas não permitam o acesso à plataforma.
 
-E esse você coloca por último, como 4° ator depois do 3° ator que é sistema:
 
 ### 4. 👨‍💼 ADMINISTRADOR — Ator Secundário
 
