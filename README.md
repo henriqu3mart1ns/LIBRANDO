@@ -294,13 +294,13 @@ Após o login, o administrador poderá realizar atividades específicas de geren
 
 | ID | Regra | Descrição |
 |:---:|:---|:---|
-| **RN-001** | E-mail Obrigatório | O usuário deve informar um e-mail para realizar o login. |
-| **RN-002** | Senha Obrigatória | O usuário deve informar uma senha para realizar o login. |
-| **RN-003** | E-mail Cadastrado | O e-mail informado deve estar associado a uma conta existente no sistema. |
-| **RN-004** | Credenciais Válidas | O e-mail e a senha informados devem corresponder aos dados cadastrados. |
-| **RN-005** | Conta Ativa | Apenas contas ativas podem realizar login na rede social. |
-| **RN-006** | Sessão de Usuário | Uma sessão deve ser criada somente após uma autenticação válida. |
-| **RN-007** | Recuperação de Senha | Somente usuários que possuem uma conta cadastrada podem iniciar a recuperação de senha. |
+| **RN-01** | E-mail Obrigatório | O usuário deve informar um e-mail para realizar o login. |
+| **RN-02** | Senha Obrigatória | O usuário deve informar uma senha para realizar o login. |
+| **RN-03** | E-mail Cadastrado | O e-mail informado deve estar associado a uma conta existente no sistema. |
+| **RN-04** | Credenciais Válidas | O e-mail e a senha informados devem corresponder aos dados cadastrados. |
+| **RN-05** | Conta Ativa | Apenas contas ativas podem realizar login na rede social. |
+| **RN-06** | Sessão de Usuário | Uma sessão deve ser criada somente após uma autenticação válida. |
+| **RN-07** | Recuperação de Senha | Somente usuários que possuem uma conta cadastrada podem iniciar a recuperação de senha. |
 | **RN-08** | Perfil do Usuário | Após a autenticação, o sistema deve identificar o perfil do usuário e aplicar suas respectivas permissões. |
 | **RN-09** | Administrador | O Administrador utiliza o mesmo processo de login do usuário cadastrado, diferenciando-se pelas permissões administrativas após a autenticação. |
 | **RN-10** | Tentativas de Login | O sistema deve controlar tentativas excessivas de autenticação para aumentar a segurança das contas. |
@@ -311,9 +311,9 @@ Após o login, o administrador poderá realizar atividades específicas de geren
 
 | ID | Atributo | Requisito | Métrica | Justificativa |
 |:---:|:---|:---|:---|:---|
-| **RNF-001** | Performance | O sistema deve responder às solicitações de login em até 2 segundos em condições normais de operação. | Tempo de resposta | Evitar que o usuário fique aguardando durante a autenticação. |
-| **RNF-002** | Segurança | As senhas dos usuários devem ser armazenadas utilizando mecanismo seguro de hash. | Senhas não armazenadas em texto puro | Proteger as credenciais dos usuários contra acesso indevido. |
-| **RNF-003** | Disponibilidade | A funcionalidade de login deve estar disponível durante o funcionamento normal da plataforma. | Disponibilidade do serviço | Permitir que os usuários consigam acessar a rede social. |
-| **RNF-004** | Acessibilidade | A tela de login deve disponibilizar recursos de acessibilidade adequados ao público-alvo, incluindo recursos em Libras quando previstos. | Recursos de acessibilidade disponíveis | Facilitar o acesso à plataforma. |
-| **RNF-005** | Usabilidade | A tela deve apresentar campos e mensagens de erro de forma clara e objetiva. | Clareza das mensagens | Facilitar a realização do login e a correção de erros. |
-| **RNF-006** | Segurança de Sessão | O sistema deve criar uma sessão segura somente após a autenticação válida. | Sessões autenticadas corretamente | Evitar acesso não autorizado às contas dos usuários. |
+| **RNF-01** | Performance | O sistema deve responder às solicitações de login em até 2 segundos em condições normais de operação. | Tempo de resposta | Evitar que o usuário fique aguardando durante a autenticação. |
+| **RNF-02** | Segurança | As senhas dos usuários devem ser armazenadas utilizando mecanismo seguro de hash. | Senhas não armazenadas em texto puro | Proteger as credenciais dos usuários contra acesso indevido. |
+| **RNF-03** | Disponibilidade | A funcionalidade de login deve estar disponível durante o funcionamento normal da plataforma. | Disponibilidade do serviço | Permitir que os usuários consigam acessar a rede social. |
+| **RNF-04** | Acessibilidade | A tela de login deve disponibilizar recursos de acessibilidade adequados ao público-alvo, incluindo recursos em Libras quando previstos. | Recursos de acessibilidade disponíveis | Facilitar o acesso à plataforma. |
+| **RNF-05** | Usabilidade | A tela deve apresentar campos e mensagens de erro de forma clara e objetiva. | Clareza das mensagens | Facilitar a realização do login e a correção de erros. |
+| **RNF-06** | Segurança de Sessão | O sistema deve criar uma sessão segura somente após a autenticação válida. | Sessões autenticadas corretamente | Evitar acesso não autorizado às contas dos usuários. |
