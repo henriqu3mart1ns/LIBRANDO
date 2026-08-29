@@ -84,17 +84,24 @@ seu-projeto-arquitetura/
 
 ### 🎯 3.1 IDENTIFICAÇÃO DO REQUISITO (2%)
 
-**ID:** RF-001
-**Título:** Cadastro de Novo Hóspede no Sistema
-**Tipo:** Requisito Funcional
-**Prioridade:** ALTA (bloqueia RF-002, RF-003 e RF-004)
-**Complexidade:** MÉDIA (estimado 5 story points)
-**Status:** EM DESENVOLVIMENTO
-**Data de Criação:** 12/10/2026
-**Última Atualização:** 12/10/2026
+- **ID:** RF-001
 
-**Breve Descrição:**
-O sistema deve permitir que recepcionistas cadastrem novos hóspedes com dados essenciais (nome, email, CPF, telefone, data de nascimento) para manter registro atualizado de clientes do hotel.
+- **Título:** Cadastro de Novo Hóspede no Sistema
+
+- **Tipo:** Requisito Funcional
+
+- **Prioridade:** ALTA (bloqueia RF-002, RF-003 e RF-004)
+
+- **Complexidade:** MÉDIA (estimado 5 story points)
+
+- **Status:** EM DESENVOLVIMENTO
+
+- **Data de Criação:** 12/10/2026
+
+- **Última Atualização:** 12/10/2026
+
+- **Breve Descrição:**  
+  O sistema deve permitir que recepcionistas cadastrem novos hóspedes com dados essenciais (nome, email, CPF, telefone, data de nascimento) para manter registro atualizado de clientes do hotel.
 
 ---
 
