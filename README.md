@@ -1,3 +1,19 @@
+## 1. METADADOS DO PROJETO E DA EQUIPE
+
+### 1.1 Composição da Equipe
+
+Preencha a tabela abaixo com os integrantes do seu grupo:
+
+| ID | Nome Completo | Papel Primário | Papel Secundário | E-mail / Contato |
+|:---:|:---|:---|:---|:---|
+| 1 | [André Mendes] | Scrum Master | Fullstack | [andre53774636@edu.df.senac.br] |
+| 2 | [Eduardo] | Desenvolvedor Front-End | — | [eduardo59381426@edu.df.senac.br] |
+| 3 | [Gabriel Ludovico / Vitor Hugo Silva] | Desenvolvedor Back-End | — | [vitor59422706@edu.df.senac.br] |
+| 4 | [Henrique Alves] | DBA / Banco de Dados | — | [henrique51782196@edu.df.senac.br] |
+| 5 | [Angel Pacheco] | QA / SecDevOps | — | [angeldanylo35@gmail.com] |
+| 6 | [Angel Pacheco] | Fullstack (opcional) | — | [angeldanylo35@gmail.com] |
+
+
 # 📋  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
 
 ## **Descrição Detalhada**
