@@ -82,7 +82,7 @@ seu-projeto-arquitetura/
 
 ## 3. DETALHAMENTO TÉCNICO DE UM REQUISITO FUNCIONAL
 
-### 🎯 1. IDENTIFICAÇÃO DO REQUISITO (2%)
+### 🎯 3.1 IDENTIFICAÇÃO DO REQUISITO (2%)
 
 **ID:** RF-001
 **Título:** Cadastro de Novo Hóspede no Sistema
@@ -100,7 +100,7 @@ O sistema deve permitir que recepcionistas cadastrem novos hóspedes com dados e
 
 
 
-### 📋 2.  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
+### 📋 3.2  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
 
 ## **Descrição Detalhada**
 
