@@ -1,4 +1,4 @@
-# 📋 2. DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
+# 📋  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
 
 ## **Descrição Detalhada**
 
