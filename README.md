@@ -1,428 +1,529 @@
-## 1. METADADOS DO PROJETO E DA EQUIPE
+# 1. METADADOS DO PROJETO E DA EQUIPE
 
-### 1.1 Composição da Equipe
+## 1.1 Composição da Equipe
 
+|  ID | Nome Completo                 | Papel Primário          | Papel Secundário | E-mail / Contato                                                                                                                                    |
+| :-: | :---------------------------- | :---------------------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1  | [André Mendes]                | Scrum Master            | Fullstack        | [[andre53774636@edu.df.senac.br](mailto:andre53774636@edu.df.senac.br)]                                                                             |
+|  2  | [Eduardo]                     | Desenvolvedor Front-End | —                | [[eduardo59381426@edu.df.senac.br](mailto:eduardo59381426@edu.df.senac.br)]                                                                         |
+|  3  | [Gabriel Souza / Vitor Silva] | Desenvolvedor Back-End  | —                | [[gabriel49414966@edu.df.senac.br](mailto:gabriel49414966@edu.df.senac.br) / [vitor59422706@edu.df.senac.br](mailto:vitor59422706@edu.df.senac.br)] |
+|  4  | [Henrique Alves]              | DBA / Banco de Dados    | —                | [[henrique51782196@edu.df.senac.br](mailto:henrique51782196@edu.df.senac.br)]                                                                       |
+|  5  | [Angel Pacheco]               | QA / SecDevOps          | —                | [[angel59381406@edu.df.senac.br](mailto:angel59381406@edu.df.senac.br)]                                                                             |
+|  6  | [Angel Pacheco]               | Fullstack (opcional)    | —                | [[angel59381406@edu.df.senac.br](mailto:angel59381406@edu.df.senac.br)]                                                                             |
 
-| ID | Nome Completo | Papel Primário | Papel Secundário | E-mail / Contato |
-|:---:|:---|:---|:---|:---|
-| 1 | [André Mendes] | Scrum Master | Fullstack | [andre53774636@edu.df.senac.br] |
-| 2 | [Eduardo] | Desenvolvedor Front-End | — | [eduardo59381426@edu.df.senac.br] |
-| 3 | [Gabriel Souza / Vitor Silva] | Desenvolvedor Back-End | — | [gabriel49414966@edu.df.senac.br / vitor59422706@edu.df.senac.br] |
-| 4 | [Henrique Alves] | DBA / Banco de Dados | — | [henrique51782196@edu.df.senac.br] |
-| 5 | [Angel Pacheco] | QA / SecDevOps | — | [angel59381406@edu.df.senac.br] |
-| 6 | [Angel Pacheco] | Fullstack (opcional) | — | [angel59381406@edu.df.senac.br] |
+## 1.2 Identificação
 
-### 1.2 Identificação
+* **NOME_DO_PROJETO:** Librando
 
-- **NOME_DO_PROJETO:** [LIBRANDO]
-  - 
+* **DESCRICAO_BREVE:**
+  Sistema web desenvolvido para a plataforma Librando, uma rede social voltada à comunidade surda. Nesta etapa do projeto, foi desenvolvida a tela de login com autenticação de usuários utilizando HTML, CSS, PHP e MySQL.
 
-- **DESCRICAO_BREVE:** [1-2 linhas sobre o que o sistema faz]
-  - *Exemplo: Sistema web para gerenciamento completo de hóspedes, reservas, check-in/check-out e faturamento de hotel.*
+## 1.3 Localização dos Artefatos
 
-### 1.3 Localização dos Artefatos
-
-- **LINK_REPOSITORIO_GITHUB:** https://github.com/[seu-usuario]/[seu-repo]
-- **BRANCH_PRINCIPAL:** main ou develop
-- **LINK_APLICACAO_DEPLOY:** https://[seu-projeto].github.io (GitHub Pages) ou Vercel, Netlify, etc.
-- **LINK_BANCO_DADOS:** [Supabase, Firebase, MongoDB Atlas, etc.] (com acesso de leitura para professor)
-- **LINK_API_SWAGGER:** https://[seu-backend]/api-docs (Documentação OpenAPI/Swagger)
-- **LINK_DEMONSTRAÇÃO:** [URL funcional da aplicação em produção]
+* **LINK_REPOSITORIO_GITHUB:** `https://github.com/[seu-usuario]/[seu-repositorio]`
+* **BRANCH_PRINCIPAL:** `main`
+* **LINK_APLICACAO_DEPLOY:** Aplicação executada localmente por meio do XAMPP.
+* **LINK_BANCO_DADOS:** Banco de dados MySQL local.
+* **LINK_API_SWAGGER:** Não se aplica nesta etapa do projeto.
+* **LINK_DEMONSTRAÇÃO:** Aplicação executada localmente em `http://localhost/librando/`
 
 ---
 
-## 2. ESTRUTURA DE DIRETÓRIOS DO PROJETO
+# 2. ESTRUTURA DE DIRETÓRIOS DO PROJETO
 
-```
-seu-projeto-arquitetura/
+```text
+librando/
+│
 ├── docs/
-│   ├── requisitos/
-│   │   ├── RF-001-cadastro-hospede.md (ENTREGA - DOCUMENTO ÚNICO)
-│   │   ├── RF-002-alterar-hospede.md  (ENTREGA - DOCUMENTO ÚNICO)
-│   │   └── ... (RF-XXX)
-│   │
-│   └── api/
-│       └── swagger.json (ou openapi.json)
+│   └── requisitos/
+│       └── RF-001-login.md
 │
 ├── src/
-│   ├── rf-001-cadastro-hospede/
-│   │   ├── index.html (HTML com CSS embutido)
-│   │   ├── app.js (Código-fonte JavaScript/Linguagem escolhida)
-│   │   └── README.md (Como executar)
-│   │
-│   ├── rf-002-alterar-hospede/
-│   │   ├── index.html
-│   │   ├── app.js
-│   │   └── README.md
-│   └── ... (rf-XXX)
+│   └── rf-001-login/
+│       ├── index.html
+│       ├── login.php
+│       ├── conexao.php
+│       ├── css/
+│       │   └── style.css
+│       └── README.md
 │
 ├── database/
 │   ├── ddl/
-│   │   ├── rf-001-hospedes-ddl.sql (Script DDL - CREATE TABLE)
-│   │   ├── rf-002-hospedes-alter-ddl.sql
-│   │   └── ... (scripts por requisito)
+│   │   └── rf-001-usuarios-ddl.sql
 │   │
 │   └── seeds/
-│       ├── hospedes-seeds.sql (Dados de exemplo)
-│       └── ...
+│       └── usuarios-seeds.sql
 │
 ├── .github/
-│   └── workflows/ (CI/CD - opcional)
+│   └── workflows/
 │
-├── README.md (guia geral do projeto)
-└── .gitignore (incluir .env, node_modules, etc)
+├── README.md
+│
+└── .gitignore
 ```
 
-**Localização dos Arquivos:**
-- **Documentação:** `docs/requisitos/RF-NNN-nome-requisito.md` (UM ÚNICO DOCUMENTO POR RF)
-- **Código-fonte:** `src/rf-NNN-nome-requisito/` (HTML + CSS + JS/TypeScript/etc)
-- **Scripts BD:** `database/ddl/rf-NNN-nome-requisito-ddl.sql`
-- **API Swagger:** `docs/api/swagger.json` ou URL do Swagger UI
-- **Aplicação Funcional:** Deployed em GitHub Pages ou nuvem com BD integrado
+## Localização dos Arquivos
 
-## 3. DETALHAMENTO TÉCNICO DE UM REQUISITO FUNCIONAL
-
-### 🎯 1. IDENTIFICAÇÃO DO REQUISITO
-
-- **ID:** RF-001
-
-- **Título:** Cadastro de Novo Hóspede no Sistema
-
-- **Tipo:** Requisito Funcional
-
-- **Prioridade:** ALTA (bloqueia RF-002, RF-003 e RF-004)
-
-- **Complexidade:** MÉDIA (estimado 5 story points)
-
-- **Status:** EM DESENVOLVIMENTO
-
-- **Data de Criação:** 12/10/2026
-
-- **Última Atualização:** 12/10/2026
-
-- **Breve Descrição:**  
-  O sistema deve permitir que recepcionistas cadastrem novos hóspedes com dados essenciais (nome, email, CPF, telefone, data de nascimento) para manter registro atualizado de clientes do hotel.
+* **Documentação:** `docs/requisitos/RF-001-login.md`
+* **Página de login:** `src/rf-001-login/index.html`
+* **Estilos CSS:** `src/rf-001-login/css/style.css`
+* **Processamento do login:** `src/rf-001-login/login.php`
+* **Conexão com o banco:** `src/rf-001-login/conexao.php`
+* **Script de criação do banco:** `database/ddl/rf-001-usuarios-ddl.sql`
+* **Dados de teste:** `database/seeds/usuarios-seeds.sql`
+* **Guia geral:** `README.md`
 
 ---
 
+# 3. DETALHAMENTO TÉCNICO DE UM REQUISITO FUNCIONAL
 
+## 🎯 3.1 IDENTIFICAÇÃO DO REQUISITO
 
-### 📋 2.  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
+* **ID:** RF-001
 
-## **Descrição Detalhada**
+* **Título:** Tela de Login da Rede Social
 
-### **Por que este requisito existe?**
+* **Tipo:** Requisito Funcional
 
-A rede social precisa disponibilizar um mecanismo de autenticação que permita aos usuários cadastrados acessar a plataforma de forma **segura, simples e acessível**.
+* **Prioridade:** ALTA
+
+* **Complexidade:** MÉDIA
+
+* **Status:** EM DESENVOLVIMENTO
+
+* **Data de Criação:** [preencher]
+
+* **Última Atualização:** [preencher]
+
+* **Breve Descrição:**
+  O sistema deve permitir que usuários previamente cadastrados realizem login na plataforma Librando por meio de e-mail e senha. As credenciais devem ser verificadas pelo backend PHP utilizando o banco de dados MySQL.
+
+---
+
+# 📋 3.2 DESCRIÇÃO E ATORES — RF-001: Tela de Login
+
+## Descrição Detalhada
+
+### Por que este requisito existe?
+
+A plataforma Librando precisa disponibilizar um mecanismo de autenticação para permitir que usuários cadastrados acessem o sistema utilizando suas credenciais.
 
 A tela de login existe para:
 
-- 🔐 **Garantir a segurança do acesso**, permitindo que somente usuários autorizados entrem na plataforma;
-- 👤 **Identificar e autenticar os usuários cadastrados**, verificando e-mail, senha, situação da conta e permissão de acesso;
-- ♿ **Garantir acessibilidade**, disponibilizando recursos visuais e suporte à comunicação em Libras;
-- 🔑 **Permitir recuperação de senha**, possibilitando que usuários que esqueceram suas credenciais recuperem o acesso à conta;
-- 📝 **Permitir a criação de novas contas**, possibilitando que novos usuários ingressem na rede social;
-- 🛡️ **Proteger as contas dos usuários**, utilizando sessão segura, proteção contra tentativas excessivas e armazenamento seguro das senhas.
+* 🔐 Permitir a autenticação de usuários cadastrados;
+* 👤 Identificar o usuário por meio do e-mail;
+* 🔑 Validar a senha informada;
+* 🛡️ Armazenar e verificar senhas de maneira segura utilizando hash;
+* ♿ Disponibilizar uma interface acessível e compatível com a proposta da plataforma;
+* 👁️ Permitir que o usuário visualize ou oculte a senha durante o preenchimento.
 
-## **Contexto do Negócio**
+## Contexto do Sistema
 
-A aplicação é uma **rede social acessível voltada para pessoas surdas**, na qual os usuários precisam realizar autenticação para acessar a plataforma.
+A aplicação Librando é uma plataforma voltada à comunidade surda.
 
-A tela de login deve permitir que um usuário cadastrado informe seu **e-mail e senha**. O sistema valida os campos, verifica as credenciais, verifica se a conta está ativa e se o usuário possui permissão de acesso.
+Nesta etapa do projeto, foi desenvolvida a funcionalidade de login, permitindo que um usuário informe seu e-mail e senha para realizar a autenticação.
 
-Quando a autenticação é válida, o sistema cria uma sessão segura e direciona o usuário para a página principal da rede social. Caso as credenciais sejam inválidas, a conta esteja desativada ou ocorram outras situações previstas, o acesso deve ser impedido e o usuário deve receber um feedback visual.
+O formulário da página é desenvolvido em **HTML e CSS**, enquanto o processamento das informações é realizado pelo **PHP**.
 
-## 👥 Atores do Sistema
+O PHP recebe os dados enviados pelo formulário e consulta o banco de dados **MySQL** por meio do arquivo `conexao.php`.
 
-### 1. 👤 USUÁRIO CADASTRADO — Ator Principal
+Quando as credenciais informadas correspondem a um usuário cadastrado, o sistema confirma que o login foi realizado com sucesso.
 
-**Papel:**  
-Realizar a autenticação para acessar a rede social.
+---
+
+# 👥 3.3 ATORES DO SISTEMA
+
+## 1. 👤 USUÁRIO CADASTRADO — Ator Principal
+
+**Papel:**
+Realizar a autenticação para acessar a plataforma Librando.
 
 **Responsabilidade:**
 
-O usuário cadastrado é responsável por informar suas próprias credenciais de acesso e utilizar os recursos disponibilizados pela tela de login.
+O usuário cadastrado deve informar suas credenciais na tela de login.
 
 Pode:
 
-- Informar o e-mail cadastrado;
-- Informar a senha;
-- Solicitar o login;
-- Visualizar ou ocultar a senha;
-- Solicitar recuperação de senha;
-- Encerrar sua sessão por meio do logout.
+* Informar o e-mail;
+* Informar a senha;
+* Visualizar ou ocultar a senha;
+* Clicar no botão **"Entrar"**;
+* Receber uma mensagem informando o resultado da tentativa de login.
 
-**Permissões:**
+### Permissões
 
-| Operação | Permissão | Justificativa |
-|---|:---:|---|
-| **CREATE** | ⚠️ | Não especificado para o usuário cadastrado na tela de login. |
-| **READ** | ✅ | Pode utilizar as informações e recursos necessários para sua autenticação. |
-| **UPDATE** | ⚠️ | Pode redefinir a senha durante o processo de recuperação. |
-| **DELETE** | ❌ | Não existe requisito para exclusão de conta na tela de login. |
+| Operação   | Permissão | Justificativa                                                            |
+| :--------- | :-------: | :----------------------------------------------------------------------- |
+| **CREATE** |     ❌     | O cadastro não faz parte do RF-001.                                      |
+| **READ**   |     ✅     | O usuário informa e consulta os dados necessários para sua autenticação. |
+| **UPDATE** |     ❌     | Alterações de dados da conta não fazem parte do RF-001.                  |
+| **DELETE** |     ❌     | Exclusão de conta não faz parte do RF-001.                               |
 
 ---
 
-### 2. 👤 USUÁRIO NÃO CADASTRADO — Ator Secundário
+## 2. ⚙️ SISTEMA — Ator Automático
 
-**Papel:**  
-Iniciar o processo de criação de uma conta para obter acesso à rede social.
-
-**Responsabilidade:**
-
-O usuário não cadastrado ainda não possui uma conta na plataforma. Portanto, **não pode realizar login nem recuperar uma senha de uma conta inexistente**.
-
-A partir da tela de login, pode selecionar a opção **"Criar uma conta"** e ser direcionado para o formulário de cadastro.
-
-**Permissões:**
-
-| Operação | Permissão | Justificativa |
-|---|:---:|---|
-| **CREATE** | ✅ | Pode iniciar o processo de criação de uma nova conta. |
-| **READ** | ⚠️ | Pode acessar informações e orientações disponíveis na tela de login. |
-| **UPDATE** | ❌ | Ainda não possui uma conta para alterar. |
-| **DELETE** | ❌ | Não possui uma conta cadastrada para excluir. |
-
-
-### 3. ⚙️ SISTEMA — Ator Automático
-
-**Papel:**  
-Executar automaticamente as operações necessárias para realizar a autenticação, garantir a segurança do acesso e controlar a sessão dos usuários da rede social.
+**Papel:**
+Processar a autenticação do usuário.
 
 **Responsabilidade:**
 
-O sistema é responsável por processar as informações fornecidas pelo usuário durante o login e aplicar as regras definidas para permitir ou impedir o acesso à rede social.
+O sistema deve:
 
-Durante o processo de autenticação, o sistema deve:
+* Receber o e-mail enviado pelo formulário;
+* Receber a senha enviada pelo formulário;
+* Verificar se os campos foram preenchidos;
+* Consultar o banco de dados;
+* Localizar o usuário pelo e-mail;
+* Verificar a senha utilizando o hash armazenado;
+* Informar se o login foi realizado com sucesso;
+* Informar caso as credenciais sejam inválidas.
 
-- Validar os campos de e-mail e senha;
-- Verificar se os campos obrigatórios foram preenchidos;
-- Validar o formato do e-mail;
-- Verificar se o e-mail informado está cadastrado;
-- Verificar se a senha corresponde à conta;
-- Verificar se a conta está ativa;
-- Verificar se o usuário possui permissão de acesso;
-- Impedir o acesso com credenciais inválidas;
-- Impedir o acesso quando a conta estiver desativada;
-- Controlar tentativas excessivas de login;
-- Apresentar mensagens de feedback ao usuário em caso de erro;
-- Criar uma sessão segura após uma autenticação válida;
-- Redirecionar o usuário autenticado para a página principal da rede social;
-- Permitir o encerramento da sessão por meio do logout;
-- Participar do processo de recuperação e redefinição de senha;
-- Armazenar as senhas utilizando mecanismo de hash seguro;
-- Utilizar comunicação segura por meio de HTTPS.
+### Permissões
 
-**Permissões:**
+| Operação   | Permissão | Justificativa                                        |
+| :--------- | :-------: | :--------------------------------------------------- |
+| **CREATE** |     ❌     | A criação de usuários não faz parte deste requisito. |
+| **READ**   |     ✅     | Consulta os dados necessários para validar o login.  |
+| **UPDATE** |     ❌     | Não realiza alteração de dados durante o login.      |
+| **DELETE** |     ❌     | Não realiza exclusão de dados durante o login.       |
 
-| Operação | Permissão | Justificativa |
-|---|:---:|---|
-| **CREATE** | ✅ | Cria uma sessão segura após a autenticação válida do usuário. |
-| **READ** | ✅ | Consulta as informações necessárias para validar e autenticar o usuário. |
-| **UPDATE** | ✅ | Participa do processo de redefinição da senha durante a recuperação. |
-| **DELETE** | ✅ | Encerra a sessão do usuário durante o logout. |
+---
 
-**Regras de Segurança:**
-
-O sistema deve garantir que:
-
-- As senhas não sejam armazenadas em texto puro;
-- As senhas sejam protegidas por mecanismo de hash seguro;
-- A comunicação entre usuário e sistema seja protegida por HTTPS;
-- Tentativas excessivas de login sejam controladas;
-- Usuários com contas desativadas não consigam acessar a rede social;
-- Credenciais inválidas não permitam o acesso à plataforma.
-
-
-### 4. 👨‍💼 ADMINISTRADOR — Ator Secundário
-
-**Papel:**  
-Realizar o login e acessar as funcionalidades administrativas da rede social.
-
-**Responsabilidade:**
-
-O administrador possui uma conta cadastrada na plataforma e utiliza o mesmo processo de autenticação dos demais usuários. A diferença está nas permissões concedidas após a autenticação.
-
-Durante o login, o administrador deve:
-
-- Informar o e-mail cadastrado;
-- Informar a senha;
-- Solicitar o login;
-- Ter suas credenciais validadas pelo sistema;
-- Ter o status da conta verificado;
-- Ter seu perfil de administrador identificado pelo sistema;
-- Acessar a área administrativa após uma autenticação válida.
-
-Após o login, o administrador poderá realizar atividades específicas de gerenciamento da plataforma, de acordo com suas permissões, como:
-
-- Gerenciar usuários;
-- Visualizar informações dos usuários;
-- Gerenciar ou desativar contas;
-- Moderar conteúdos publicados na rede social;
-- Analisar denúncias;
-- Aplicar medidas administrativas previstas pelo sistema.
-
-**Permissões — CRUD:**
-
-| Operação | Permissão | Justificativa |
-|---|:---:|---|
-| **CREATE** | ✅ | Pode realizar operações administrativas que envolvam a criação de registros, quando previstas pelo sistema. |
-| **READ** | ✅ | Pode consultar informações necessárias para administração e moderação da plataforma. |
-| **UPDATE** | ✅ | Pode alterar informações ou status de usuários e conteúdos conforme suas permissões administrativas. |
-| **DELETE** | ✅ | Pode excluir ou remover registros e conteúdos quando essa ação estiver prevista para a administração da plataforma. |
-
-# 🔄 3. ESPECIFICAÇÃO DE CASOS DE USO + REQUISITOS NÃO-FUNCIONAIS (20%)
-
-**Objetivo:** Descrever detalhadamente como o requisito da tela de login é executado, apresentando pré-condições, pós-condições, fluxo principal, fluxos alternativos, regras de negócio e requisitos não-funcionais.
-
-## 📌 Caso de Uso
+# 🔄 3.4 ESPECIFICAÇÃO DO CASO DE USO
 
 **Caso de Uso (UC-001): Realizar Login**
 
-**Requisito Funcional:** RF — Tela de Login da Rede Social
+**Requisito Funcional:** RF-001 — Tela de Login da Rede Social
 
 ### Atores Envolvidos
 
-- 👤 **Usuário Cadastrado** — Ator Principal
-- 👨‍💼 **Administrador** — Ator Secundário
-- ⚙️ **Sistema** — Ator Automático
+* 👤 **Usuário Cadastrado**
+* ⚙️ **Sistema**
 
 ## 🔹 Pré-Condições
 
-- ✅ O usuário deve possuir uma conta cadastrada;
-- ✅ O usuário deve possuir um e-mail válido associado à sua conta;
-- ✅ O usuário deve possuir uma senha cadastrada;
-- ✅ A conta do usuário deve estar ativa;
-- ✅ O sistema deve estar disponível;
-- ✅ O banco de dados deve estar acessível;
-- ✅ O usuário deve estar na tela de login da rede social.
+* O usuário deve possuir uma conta cadastrada;
+* O usuário deve possuir um e-mail cadastrado;
+* O usuário deve possuir uma senha cadastrada;
+* O banco de dados deve estar disponível;
+* O servidor PHP deve estar funcionando;
+* O usuário deve estar na página de login.
 
-## 🔹 Pós-Condições (Sucesso)
+## 🔹 Pós-Condições — Sucesso
 
-- ✅ As credenciais do usuário são validadas;
-- ✅ A conta do usuário é identificada;
-- ✅ O sistema verifica se a conta está ativa;
-- ✅ O sistema identifica o perfil do usuário;
-- ✅ Uma sessão segura é criada;
-- ✅ O usuário é autenticado;
-- ✅ O usuário é direcionado para a página principal da rede social;
-- ✅ Caso seja Administrador, suas permissões administrativas são carregadas.
+* O e-mail informado é encontrado no banco;
+* A senha informada corresponde ao hash armazenado;
+* O sistema reconhece as credenciais como válidas;
+* O sistema apresenta uma mensagem de login efetuado com sucesso.
 
-## 🔹 Pós-Condições (Falha)
+## 🔹 Pós-Condições — Falha
 
-- ❌ O usuário não é autenticado;
-- ❌ Uma sessão não é criada;
-- ❌ O acesso à rede social é negado;
-- ✅ Uma mensagem de erro é apresentada;
-- ✅ O usuário permanece na tela de login;
-- ✅ A tentativa pode ser registrada para fins de segurança.
-
-## 🔄 Fluxo Principal
-
-1. Usuário cadastrado acessa a tela de login da rede social.
-2. Sistema apresenta os campos de **E-mail** e **Senha**.
-3. Usuário informa seu e-mail cadastrado.
-4. Sistema verifica se o campo de e-mail foi preenchido corretamente.
-5. Usuário informa sua senha.
-6. Sistema verifica se o campo de senha foi preenchido.
-7. Usuário clica no botão **"Entrar"**.
-8. Sistema valida os dados informados.
-9. Sistema verifica se o e-mail está cadastrado.
-10. Sistema verifica se a senha corresponde à conta.
-11. Sistema verifica se a conta está ativa.
-12. Sistema identifica o perfil associado à conta.
-13. Sistema autentica o usuário.
-14. Sistema cria uma sessão segura para o usuário.
-15. Sistema registra o acesso, quando previsto pelas regras de segurança.
-16. Sistema redireciona o usuário para a página principal da rede social.
-17. Usuário acessa a plataforma de acordo com suas permissões.
-18. Caso o usuário seja Administrador, o sistema disponibiliza as funcionalidades administrativas permitidas para seu perfil.
-
-# 🔀 Fluxos Alternativos
-
-## Fluxo Alternativo A1 — E-mail ou senha inválidos
-
-1. Sistema identifica que as credenciais informadas são inválidas.
-2. Sistema impede a autenticação do usuário.
-3. Sistema não cria uma sessão.
-4. Sistema apresenta uma mensagem de erro.
-5. Usuário permanece na tela de login.
-6. Usuário pode corrigir os dados e realizar uma nova tentativa.
-
-## Fluxo Alternativo A2 — Conta desativada
-
-1. Sistema identifica que a conta associada ao e-mail está desativada.
-2. Sistema impede a autenticação.
-3. Sistema não cria uma sessão para o usuário.
-4. Sistema informa que a conta está desativada.
-5. Sistema orienta o usuário a entrar em contato com o suporte, quando aplicável.
-
-**Mensagem sugerida:**  
-
-## Fluxo Alternativo A3 — E-mail não cadastrado
-
-1. Sistema verifica que não existe uma conta associada ao e-mail informado.
-2. Sistema impede a autenticação.
-3. Sistema não cria uma sessão.
-4. Sistema informa que não foi encontrada uma conta para aquele e-mail.
-5. Sistema disponibiliza a opção **"Criar uma conta"**.
-6. Usuário pode iniciar o processo de cadastro.
-
-**Mensagem sugerida:**  
-
-## Fluxo Alternativo A4 — Campos obrigatórios não preenchidos
-
-1. Sistema identifica que o campo de e-mail está vazio ou inválido.
-2. Sistema destaca o campo que apresenta erro.
-3. Sistema apresenta uma mensagem orientando o preenchimento correto.
-4. Usuário corrige o campo.
-5. Sistema realiza novamente a validação.
-
-## Fluxo Alternativo A5 — Recuperação de senha
-
-1. Usuário cadastrado seleciona a opção **"Esqueci minha senha"**.
-2. Sistema solicita o e-mail associado à conta.
-3. Usuário informa o e-mail.
-4. Sistema verifica se o e-mail está associado a uma conta.
-5. Sistema inicia o processo de recuperação de senha.
-6. Usuário recebe as instruções necessárias para redefinir sua senha.
-7. Usuário define uma nova senha.
-8. Sistema atualiza a senha da conta.
-9. Usuário retorna à tela de login e pode realizar uma nova tentativa.
-
-## Fluxo Alternativo A6 — Falha de conexão
-
-1. Sistema tenta realizar a validação das credenciais.
-2. Sistema identifica uma falha de comunicação com o banco de dados ou servidor.
-3. Sistema não consegue concluir a autenticação.
-4. Sistema impede a criação da sessão.
-5. Sistema apresenta uma mensagem informando que o serviço está temporariamente indisponível.
-6. Usuário pode tentar realizar o login novamente posteriormente.
-
-# 📋 Regras de Negócio (RN)
-
-| ID | Regra | Descrição |
-|:---:|:---|:---|
-| **RN-01** | E-mail Obrigatório | O usuário deve informar um e-mail para realizar o login. |
-| **RN-02** | Senha Obrigatória | O usuário deve informar uma senha para realizar o login. |
-| **RN-03** | E-mail Cadastrado | O e-mail informado deve estar associado a uma conta existente no sistema. |
-| **RN-04** | Credenciais Válidas | O e-mail e a senha informados devem corresponder aos dados cadastrados. |
-| **RN-05** | Conta Ativa | Apenas contas ativas podem realizar login na rede social. |
-| **RN-06** | Sessão de Usuário | Uma sessão deve ser criada somente após uma autenticação válida. |
-| **RN-07** | Recuperação de Senha | Somente usuários que possuem uma conta cadastrada podem iniciar a recuperação de senha. |
-| **RN-08** | Perfil do Usuário | Após a autenticação, o sistema deve identificar o perfil do usuário e aplicar suas respectivas permissões. |
-| **RN-09** | Administrador | O Administrador utiliza o mesmo processo de login do usuário cadastrado, diferenciando-se pelas permissões administrativas após a autenticação. |
-| **RN-10** | Tentativas de Login | O sistema deve controlar tentativas excessivas de autenticação para aumentar a segurança das contas. |
+* O usuário não é autenticado;
+* O sistema não confirma o login;
+* O sistema apresenta uma mensagem informando que as credenciais são inválidas.
 
 ---
 
-# ⚙️ Requisitos Não-Funcionais (RNF)
+# 🔄 3.5 FLUXO PRINCIPAL
 
-| ID | Atributo | Requisito | Métrica | Justificativa |
-|:---:|:---|:---|:---|:---|
-| **RNF-01** | Performance | O sistema deve responder às solicitações de login em até 2 segundos em condições normais de operação. | Tempo de resposta | Evitar que o usuário fique aguardando durante a autenticação. |
-| **RNF-02** | Segurança | As senhas dos usuários devem ser armazenadas utilizando mecanismo seguro de hash. | Senhas não armazenadas em texto puro | Proteger as credenciais dos usuários contra acesso indevido. |
-| **RNF-03** | Disponibilidade | A funcionalidade de login deve estar disponível durante o funcionamento normal da plataforma. | Disponibilidade do serviço | Permitir que os usuários consigam acessar a rede social. |
-| **RNF-04** | Acessibilidade | A tela de login deve disponibilizar recursos de acessibilidade adequados ao público-alvo, incluindo recursos em Libras quando previstos. | Recursos de acessibilidade disponíveis | Facilitar o acesso à plataforma. |
-| **RNF-05** | Usabilidade | A tela deve apresentar campos e mensagens de erro de forma clara e objetiva. | Clareza das mensagens | Facilitar a realização do login e a correção de erros. |
-| **RNF-06** | Segurança de Sessão | O sistema deve criar uma sessão segura somente após a autenticação válida. | Sessões autenticadas corretamente | Evitar acesso não autorizado às contas dos usuários. |
+1. Usuário acessa a página de login do Librando.
+2. Sistema apresenta os campos **E-mail** e **Senha**.
+3. Usuário informa seu e-mail.
+4. Usuário informa sua senha.
+5. Usuário pode clicar no ícone de olho para visualizar ou ocultar a senha.
+6. Usuário clica no botão **"Entrar"**.
+7. O formulário envia os dados utilizando o método `POST`.
+8. O arquivo `login.php` recebe os dados enviados.
+9. O `login.php` utiliza o `conexao.php` para acessar o banco de dados.
+10. O sistema procura o usuário utilizando o e-mail informado.
+11. O sistema verifica a senha informada utilizando o hash armazenado.
+12. Caso as credenciais sejam válidas, o sistema confirma o login.
+13. O sistema apresenta uma mensagem informando que o login foi efetuado com sucesso.
+
+---
+
+# 🔀 3.6 FLUXOS ALTERNATIVOS
+
+## Fluxo Alternativo A1 — E-mail não cadastrado
+
+1. Usuário informa um e-mail.
+2. Usuário informa a senha.
+3. Usuário seleciona **"Entrar"**.
+4. O sistema consulta o banco de dados.
+5. O sistema não encontra o e-mail informado.
+6. O sistema impede a autenticação.
+7. O sistema apresenta uma mensagem informando que as credenciais são inválidas.
+
+## Fluxo Alternativo A2 — Senha incorreta
+
+1. Usuário informa um e-mail cadastrado.
+2. Usuário informa uma senha incorreta.
+3. Usuário seleciona **"Entrar"**.
+4. O sistema encontra o usuário pelo e-mail.
+5. O sistema verifica a senha.
+6. A senha não corresponde ao hash armazenado.
+7. O sistema impede a autenticação.
+8. O sistema apresenta uma mensagem de erro.
+
+## Fluxo Alternativo A3 — Campos não preenchidos
+
+1. Usuário acessa a página de login.
+2. Usuário deixa um ou mais campos vazios.
+3. Usuário tenta realizar o login.
+4. O sistema identifica que existem campos obrigatórios não preenchidos.
+5. O sistema solicita que os campos sejam preenchidos.
+
+## Fluxo Alternativo A4 — Falha na conexão com o banco
+
+1. Usuário envia suas credenciais.
+2. `login.php` tenta acessar o banco de dados.
+3. O sistema identifica uma falha na conexão.
+4. A autenticação não pode ser concluída.
+5. O sistema apresenta uma mensagem informando que ocorreu um erro durante o processamento.
+
+---
+
+# 📋 3.7 REGRAS DE NEGÓCIO
+
+|     ID    | Regra               | Descrição                                                                             |
+| :-------: | :------------------ | :------------------------------------------------------------------------------------ |
+| **RN-01** | E-mail obrigatório  | O usuário deve informar um e-mail para realizar o login.                              |
+| **RN-02** | Senha obrigatória   | O usuário deve informar uma senha para realizar o login.                              |
+| **RN-03** | E-mail cadastrado   | O e-mail informado deve existir no banco de dados.                                    |
+| **RN-04** | Senha válida        | A senha informada deve corresponder ao hash armazenado no banco.                      |
+| **RN-05** | Senha protegida     | As senhas não devem ser armazenadas em texto puro.                                    |
+| **RN-06** | Método POST         | Os dados do formulário devem ser enviados ao backend utilizando o método `POST`.      |
+| **RN-07** | Conexão com o banco | O sistema deve utilizar o arquivo `conexao.php` para realizar a conexão com o MySQL.  |
+| **RN-08** | Feedback            | O sistema deve informar ao usuário se o login foi realizado ou se ocorreu algum erro. |
+
+---
+
+# ⚙️ 3.8 REQUISITOS NÃO-FUNCIONAIS
+
+|     ID     | Atributo         | Requisito                                                                                 | Métrica                               | Justificativa                                       |
+| :--------: | :--------------- | :---------------------------------------------------------------------------------------- | :------------------------------------ | :-------------------------------------------------- |
+| **RNF-01** | Segurança        | As senhas devem ser armazenadas utilizando hash.                                          | Senhas não armazenadas em texto puro. | Proteger as credenciais dos usuários.               |
+| **RNF-02** | Segurança        | O sistema deve utilizar `password_verify()` para verificar a senha.                       | Verificação por hash.                 | Evitar comparação de senhas em texto puro.          |
+| **RNF-03** | Usabilidade      | A tela deve apresentar os campos de login de forma clara.                                 | Interface organizada.                 | Facilitar a utilização pelo usuário.                |
+| **RNF-04** | Acessibilidade   | A interface deve possuir recursos voltados à acessibilidade, incluindo suporte em Libras. | Recurso de acessibilidade disponível. | Atender ao público-alvo da plataforma.              |
+| **RNF-05** | Compatibilidade  | O sistema deve funcionar em navegadores modernos.                                         | Execução em navegadores compatíveis.  | Permitir acesso ao sistema em diferentes ambientes. |
+| **RNF-06** | Manutenibilidade | O código deve ser organizado em arquivos separados conforme sua responsabilidade.         | HTML, CSS, PHP e SQL separados.       | Facilitar manutenção e evolução do projeto.         |
+
+---
+
+# 🗄️ 3.9 BANCO DE DADOS
+
+O sistema utiliza **MySQL** para armazenar os dados necessários à autenticação dos usuários.
+
+Os scripts relacionados ao banco estão organizados em:
+
+```text
+database/
+├── ddl/
+│   └── rf-001-usuarios-ddl.sql
+│
+└── seeds/
+    └── usuarios-seeds.sql
+```
+
+## DDL
+
+O arquivo DDL é responsável pela criação da estrutura necessária para armazenar os usuários.
+
+```text
+database/ddl/rf-001-usuarios-ddl.sql
+```
+
+## Seeds
+
+O arquivo Seeds contém dados de exemplo utilizados para testar a autenticação.
+
+```text
+database/seeds/usuarios-seeds.sql
+```
+
+As senhas armazenadas no banco devem estar em formato de **hash**, gerado pelo PHP.
+
+---
+
+# 🔐 3.10 AUTENTICAÇÃO
+
+O processo de autenticação é dividido entre o Front-End e o Back-End.
+
+### Front-End
+
+O arquivo:
+
+```text
+src/rf-001-login/index.html
+```
+
+é responsável pela interface da tela de login.
+
+Os dados são enviados através do formulário:
+
+```html
+<form action="login.php" method="POST">
+```
+
+Os campos utilizados são:
+
+```text
+email
+senha
+```
+
+### Back-End
+
+O arquivo:
+
+```text
+src/rf-001-login/login.php
+```
+
+recebe os dados enviados pelo formulário e realiza a validação das credenciais.
+
+### Banco de Dados
+
+O arquivo:
+
+```text
+src/rf-001-login/conexao.php
+```
+
+realiza a conexão entre o PHP e o banco de dados MySQL.
+
+---
+
+# ▶️ 3.11 EXECUÇÃO DO PROJETO
+
+Para executar o projeto localmente, é necessário utilizar o **XAMPP**.
+
+## Passo 1 — Instalar o XAMPP
+
+Instale o XAMPP no computador.
+
+## Passo 2 — Iniciar Apache e MySQL
+
+Abra o XAMPP Control Panel e inicie:
+
+```text
+Apache
+MySQL
+```
+
+## Passo 3 — Colocar o projeto no htdocs
+
+Coloque a pasta `librando` dentro de:
+
+```text
+C:\xampp\htdocs\
+```
+
+## Passo 4 — Criar o banco
+
+Abra:
+
+```text
+http://localhost/phpmyadmin
+```
+
+Crie o banco:
+
+```text
+librando
+```
+
+## Passo 5 — Importar o DDL
+
+No phpMyAdmin, selecione o banco `librando` e importe:
+
+```text
+database/ddl/rf-001-usuarios-ddl.sql
+```
+
+## Passo 6 — Importar o Seeds
+
+Depois de criar a estrutura do banco, importe:
+
+```text
+database/seeds/usuarios-seeds.sql
+```
+
+## Passo 7 — Acessar o sistema
+
+Abra o navegador e acesse:
+
+```text
+http://localhost/librando/
+```
+
+> **Importante:** o arquivo `index.html` não deve ser aberto diretamente pelo computador. O sistema deve ser acessado pelo servidor Apache, pois o login utiliza PHP.
+
+---
+
+# 🔗 3.12 FLUXO DA APLICAÇÃO
+
+```text
+┌─────────────────────┐
+│      index.html     │
+│    Tela de Login    │
+└──────────┬──────────┘
+           │
+           │ POST
+           ▼
+┌─────────────────────┐
+│      login.php      │
+│ Processa o login    │
+└──────────┬──────────┘
+           │
+           │ Conexão
+           ▼
+┌─────────────────────┐
+│    conexao.php      │
+│ Conecta ao MySQL    │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│    Banco MySQL      │
+│     Usuários        │
+└──────────┬──────────┘
+           │
+           │ Verificação
+           ▼
+┌─────────────────────┐
+│  password_verify()  │
+└──────────┬──────────┘
+           │
+       ┌───┴───┐
+       │       │
+     Válido  Inválido
+       │       │
+       ▼       ▼
+   Login     Mensagem
+ efetuado     de erro
+```
+
+---
+
+# 📌 3.13 STATUS DA IMPLEMENTAÇÃO
+
+| Funcionalidade                |            Status           |
+| :---------------------------- | :-------------------------: |
+| Tela de login                 |        ✅ Implementado       |
+| Campo de e-mail               |        ✅ Implementado       |
+| Campo de senha                |        ✅ Implementado       |
+| Mostrar/ocultar senha         |        ✅ Implementado       |
+| Formulário HTML               |        ✅ Implementado       |
+| Comunicação com PHP           |        ✅ Implementado       |
+| Conexão com MySQL             |        ✅ Implementado       |
+| Consulta de usuário           |        ✅ Implementado       |
+| Verificação de senha com hash |        ✅ Implementado       |
+| Mensagem de login efetuado    |        ✅ Implementado       |
+| Cadastro de usuário           | ⏳ Não implementado neste RF |
+| Recuperação de senha          | ⏳ Não implementado neste RF |
+| Logout                        | ⏳ Não implementado neste RF |
+| Página principal após login   | ⏳ Não implementado neste RF |
+| API Swagger                   | ⏳ Não aplicável nesta etapa |
