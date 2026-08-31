@@ -263,6 +263,209 @@ Após o login, o administrador poderá realizar atividades específicas de geren
 | **DELETE** | ✅ | Pode excluir ou remover registros e conteúdos quando essa ação estiver prevista para a administração da plataforma. |
 Não aplicável nesta etapa |
 
+
+# 🔄 3. ESPECIFICAÇÃO DE CASOS DE USO + REQUISITOS NÃO-FUNCIONAIS
+
+## 📌 Objetivo
+
+Descrever detalhadamente como o requisito **RF — Tela de Login da Rede Social** será executado, especificando o caso de uso, pré-condições, pós-condições, fluxo principal, fluxos alternativos, regras de negócio e requisitos não-funcionais.
+
+A especificação foi elaborada com base nos requisitos definidos para a tela de login, considerando autenticação, acessibilidade, segurança e usabilidade.
+
+## 📋 Caso de Uso
+
+### UC-001 — Realizar Login
+
+**Requisito Funcional:** RF — Tela de Login da Rede Social
+
+### Atores Envolvidos
+
+- 👤 **Usuário Cadastrado** — Ator Principal
+- 👨‍💼 **Administrador** — Ator Secundário
+- ⚙️ **Sistema** — Ator Automático
+
+## 🔹 Pré-Condições
+
+- O usuário deve possuir uma conta cadastrada;
+- O usuário deve possuir e-mail e senha cadastrados;
+- A conta deve estar ativa;
+- O sistema deve estar disponível;
+- O banco de dados deve estar acessível;
+- O usuário deve estar na tela de login.
+
+## 🔹 Pós-Condições
+
+### ✅ Sucesso
+
+- Credenciais são validadas;
+- Conta do usuário é identificada;
+- Status da conta é verificado;
+- Permissão de acesso é verificada;
+- Perfil do usuário é identificado;
+- Usuário é autenticado;
+- Uma sessão segura é criada;
+- O acesso pode ser registrado;
+- Usuário é direcionado para a página principal da rede social.
+
+### ❌ Falha
+
+- Usuário não é autenticado;
+- Sessão não é criada;
+- Acesso à plataforma é impedido;
+- Sistema apresenta feedback visual;
+- Usuário permanece na tela de login;
+- Quando aplicável, a tentativa pode ser registrada.
+
+## 🔄 Fluxo Principal
+
+1. Usuário cadastrado acessa a tela de login.
+2. Sistema apresenta o campo de **E-mail**.
+3. Sistema apresenta o campo de **Senha**.
+4. Usuário informa seu e-mail cadastrado.
+5. Sistema valida o preenchimento e o formato do e-mail.
+6. Usuário informa sua senha.
+7. Sistema mantém a senha oculta por padrão.
+8. Usuário seleciona o botão **"Entrar"**.
+9. Sistema valida os campos obrigatórios.
+10. Sistema envia as credenciais ao servidor.
+11. Sistema verifica se o e-mail está cadastrado.
+12. Sistema verifica se a senha corresponde à conta.
+13. Sistema verifica se a conta está ativa.
+14. Sistema verifica se o usuário possui permissão de acesso.
+15. Sistema autentica o usuário.
+16. Sistema cria uma sessão segura.
+17. Sistema registra o acesso quando aplicável.
+18. Sistema redireciona o usuário para a página principal da rede social.
+19. Usuário acessa a plataforma de acordo com suas permissões.
+20. Caso o usuário seja Administrador, o sistema disponibiliza as funcionalidades permitidas para seu perfil.
+
+# 🔀 Fluxos Alternativos
+
+## A1 — Credenciais inválidas
+
+1. Sistema identifica que o e-mail ou senha informados estão incorretos.
+2. Sistema impede o acesso.
+3. Sistema não cria uma sessão.
+4. Sistema apresenta uma mensagem visual de erro.
+5. Usuário permanece na tela de login.
+6. Usuário pode corrigir os dados e realizar uma nova tentativa.
+
+## A2 — Conta inexistente
+
+1. Sistema verifica que não existe uma conta associada ao e-mail informado.
+2. Sistema impede a realização do login.
+3. Sistema não cria uma sessão.
+4. Sistema apresenta uma mensagem informando que o login não pôde ser realizado.
+5. Sistema disponibiliza um caminho para **"Criar uma conta"**.
+6. Usuário pode iniciar o processo de cadastro.
+
+## A3 — Conta desativada
+
+1. Sistema identifica que a conta associada ao e-mail está desativada.
+2. Sistema impede o acesso.
+3. Sistema não cria uma sessão.
+4. Sistema apresenta uma orientação visual sobre a situação da conta.
+5. Sistema orienta o usuário a solicitar suporte, quando aplicável.
+
+## A4 — Campos obrigatórios inválidos ou vazios
+
+1. Usuário tenta realizar o login.
+2. Sistema verifica os campos obrigatórios.
+3. Sistema identifica que o e-mail ou senha está vazio ou inválido.
+4. Sistema destaca visualmente o campo que apresenta erro.
+5. Sistema apresenta uma mensagem de orientação.
+6. Usuário corrige os dados.
+7. Sistema realiza novamente a validação.
+
+## A5 — Recuperação de senha
+
+1. Usuário cadastrado seleciona **"Esqueci minha senha"**.
+2. Sistema direciona para a tela de recuperação de senha.
+3. Usuário informa o e-mail associado à conta.
+4. Sistema verifica o e-mail informado.
+5. Sistema inicia o processo de recuperação.
+6. Usuário recebe as instruções para redefinição.
+7. Usuário define uma nova senha.
+8. Sistema confirma a alteração.
+9. Usuário retorna à tela de login.
+
+## A6 — Falha de conexão
+
+1. Sistema tenta enviar as credenciais ao servidor.
+2. Sistema identifica uma falha de comunicação.
+3. Sistema não consegue concluir a autenticação.
+4. Sistema não cria uma sessão.
+5. Sistema apresenta feedback visual informando a indisponibilidade temporária.
+6. Usuário pode tentar novamente posteriormente.
+
+# 📋 Regras de Negócio (RN)
+
+| ID | Regra | Descrição |
+|:---:|:---|:---|
+| **RN-001** | Usuário Cadastrado | Somente usuários cadastrados podem realizar login. |
+| **RN-002** | Credenciais | O usuário deve informar e-mail e senha válidos. |
+| **RN-003** | Conta Ativa | Usuários com conta desativada não podem acessar a plataforma. |
+| **RN-004** | Redirecionamento | Após uma autenticação válida, o usuário deve ser direcionado à área principal. |
+| **RN-005** | Credenciais Inválidas | Credenciais inválidas não devem permitir o acesso. |
+| **RN-006** | Senha | A senha nunca deve ser armazenada em texto puro. |
+| **RN-007** | Feedback Visual | O sistema deve fornecer feedback visual para erros e operações realizadas. |
+| **RN-008** | Recuperação de Senha | O usuário deve poder recuperar sua senha. |
+| **RN-009** | Criação de Conta | O usuário deve poder iniciar o processo de criação de uma nova conta. |
+| **RN-010** | Acessibilidade | Recursos essenciais devem ser acessíveis sem depender exclusivamente de áudio. |
+
+# ⚙️ Requisitos Não-Funcionais (RNF)
+
+## 🔐 Segurança
+
+| ID | Requisito | Descrição |
+|:---:|:---|:---|
+| **RS-LOGIN-001** | Proteção das Senhas | As senhas não devem ser armazenadas em texto puro e devem utilizar mecanismo seguro de hash. |
+| **RS-LOGIN-002** | Comunicação Segura | As credenciais devem ser transmitidas utilizando uma conexão segura, como HTTPS. |
+| **RS-LOGIN-003** | Proteção contra Tentativas Excessivas | O sistema deve possuir mecanismos contra tentativas automatizadas ou excessivas de login. |
+| **RS-LOGIN-004** | Sessão Segura | A sessão autenticada deve possuir mecanismos para reduzir riscos de sequestro ou reutilização indevida. |
+| **RS-LOGIN-005** | Logout | O sistema deve permitir que o usuário encerre sua sessão autenticada. |
+
+## ♿ Acessibilidade
+
+| ID | Requisito | Descrição |
+|:---:|:---|:---|
+| **RA-LOGIN-001** | Comunicação Visual | Informações essenciais devem possuir representação visual e não depender exclusivamente de sons. |
+| **RA-LOGIN-002** | Suporte em Libras | A tela deve disponibilizar acesso a uma explicação em Libras sobre login, recuperação de senha e criação de conta. |
+| **RA-LOGIN-003** | Legendas | Vídeos em Libras devem possuir legendas quando aplicável. |
+| **RA-LOGIN-004** | Contraste | A interface deve possuir contraste adequado entre textos, fundos, botões, campos e mensagens. |
+| **RA-LOGIN-005** | Tamanho dos Elementos | Campos, botões e textos devem possuir tamanho adequado para visualização e interação. |
+| **RA-LOGIN-006** | Navegação por Teclado | Campos e controles interativos devem poder ser acessados e utilizados por teclado. |
+| **RA-LOGIN-007** | Identificação dos Campos | Cada campo deve possuir identificação clara e persistente. |
+
+## 🖥️ Usabilidade
+
+| ID | Requisito | Descrição |
+|:---:|:---|:---|
+| **RU-LOGIN-001** | Interface Simples | A tela deve apresentar somente as informações necessárias ao login, evitando excesso de elementos. |
+| **RU-LOGIN-002** | Feedback Visual | O sistema deve apresentar feedback visual para ações bem-sucedidas, erros e estados importantes. |
+| **RU-LOGIN-003** | Estado de Carregamento | Durante o processamento, o botão deve apresentar um indicador visual e impedir múltiplos envios simultâneos. |
+| **RU-LOGIN-004** | Responsividade | A tela deve funcionar adequadamente em computadores, notebooks, tablets e smartphones. |
+
+# 🧪 Casos de Teste Relacionados
+
+| ID | Cenário | Resultado Esperado |
+|:---:|:---|:---|
+| **CT01** | Informar e-mail e senha corretos | Usuário acessa a plataforma. |
+| **CT02** | Informar e-mail incorreto | Login não é realizado. |
+| **CT03** | Informar senha incorreta | Login não é realizado. |
+| **CT04** | Deixar e-mail vazio | Sistema informa que o campo é obrigatório. |
+| **CT05** | Deixar senha vazia | Sistema informa que o campo é obrigatório. |
+| **CT06** | Informar e-mail em formato inválido | Sistema informa que o e-mail é inválido. |
+| **CT07** | Selecionar "Esqueci minha senha" | Sistema abre a recuperação de senha. |
+| **CT08** | Selecionar "Criar conta" | Sistema abre o cadastro. |
+| **CT09** | Selecionar "Visualizar senha" | Senha fica visível. |
+| **CT10** | Selecionar novamente "Visualizar senha" | Senha volta a ficar oculta. |
+| **CT11** | Tentar login com conta desativada | Sistema impede o acesso. |
+| **CT12** | Acessar recurso de Libras | Sistema apresenta orientação em Libras. |
+| **CT13** | Navegar usando teclado | Elementos interativos podem ser acessados. |
+| **CT14** | Acessar pelo celular | Tela adapta-se ao tamanho da tela. |
+| **CT15** | Errar login | Mensagem visual é apresentada. |
+
 ## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + CÓDIGO + BD + DEPLOY) (40%)
 
 **Objetivo:** Implementação COMPLETA e FUNCIONAL da feature, com aplicação rodando em produção.
@@ -287,29 +490,31 @@ Não aplicável nesta etapa |
 - ✅ Aplicação acessível via URL pública
 - ✅ Demonstração prática funcionando
 
-# 4 PREENCHER AQUI
+# 4. PREENCHER AQUI
 
 #### Exemplo Prático — RF-001: Mockup das Telas
 
 **Mockup - Tela 1: Formulário Vazio (Estado Inicial)**
 ```
 ┌────────────────────────────────────────────────┐
-│  ☰ Hotel Management  [Usuário ▼]              │
-├────────────────────────────────────────────────┤
 │                                                │
-│  📝 Cadastro de Novo Hóspede                   │
+│                  LIBRANDO                       │
+│        Rede social acessível em Libras         │
 │                                                │
-│  Nome Completo: [_________________________]    │
-│  Email:         [_________________________]    │
-│  CPF:           [_________________________]    │
-│  Telefone:      [_________________________]    │
-│  Data Nascimento: [_________________________]   │
+│              ┌──────────────────┐              │
+│              │ E-mail           │              │
+│              └──────────────────┘              │
 │                                                │
-│  Observações:                                  │
-│  [_________________________________]           │
-│  [_________________________________]           │
+│              ┌──────────────────┐              │
+│              │ Senha         👁 │              │
+│              └──────────────────┘              │
 │                                                │
-│  [ SALVAR ]  [ CANCELAR ]  [ LIMPAR ]          │
+│              [     ENTRAR     ]                │
+│                                                │
+│              Esqueceu a senha?                 │
+│                                                │
+│          Ainda não possui conta?               │
+│              [ CADASTRE-SE ]                   │
 │                                                │
 └────────────────────────────────────────────────┘
 ```
@@ -317,79 +522,62 @@ Não aplicável nesta etapa |
 **Mockup - Tela 2: Formulário Preenchido (Validação Visual)**
 ```
 ┌────────────────────────────────────────────────┐
-│  ☰ Hotel Management  [Usuário ▼]              │
-├────────────────────────────────────────────────┤
 │                                                │
-│  📝 Cadastro de Novo Hóspede                   │
+│                  LIBRANDO                       │
+│        Rede social acessível em Libras         │
 │                                                │
-│  Nome: [João da Silva              ] ✅        │
-│  Email: [joao.silva@email.com      ] ✅        │
-│  CPF: [12345678901                 ] ✅        │
-│  Telefone: [(11) 99999-8888        ] ✅        │
-│  Data Nascimento: [15/03/1990       ] ✅        │
+│              ┌──────────────────┐              │
+│              │ usuario@email.com │ ✅           │
+│              └──────────────────┘              │
 │                                                │
-│  Observações:                                  │
-│  [Cliente VIP, pedir upgrade ao   ]            │
-│  [check-in                        ]            │
+│              ┌──────────────────┐              │
+│              │ •••••••••••••• 👁│ ✅           │
+│              └──────────────────┘              │
 │                                                │
-│  [ SALVAR ]  [ CANCELAR ]  [ LIMPAR ]          │
+│              [     ENTRAR     ]                │
 │                                                │
-└────────────────────────────────────────────────┘
-```
-
-**Mockup - Tela 3: Carregando (Processando)**
-```
-┌────────────────────────────────────────────────┐
-│  ☰ Hotel Management  [Usuário ▼]              │
-├────────────────────────────────────────────────┤
-│                                                │
-│         Salvando dados do hóspede...           │
-│              ⟳  (spinner)                      │
-│                                                │
-│         Aguarde um momento...                  │
-│                                                │
-│  [ CANCELAR ]                                  │
+│              Esqueceu a senha?                 │
 │                                                │
 └────────────────────────────────────────────────┘
 ```
 
-**Mockup - Tela 4: Erro de Validação (Email Duplicado)**
+**Mockup - Tela 3: Erro de Validação (Email Duplicado)**
 ```
 ┌────────────────────────────────────────────────┐
-│  ☰ Hotel Management  [Usuário ▼]              │
-├────────────────────────────────────────────────┤
 │                                                │
-│  ⚠️ ERRO ao cadastrar hóspede                  │
-│  Este email já está cadastrado no sistema      │
+│                  LIBRANDO                       │
 │                                                │
-│  Nome: [João Silva                 ] ✅        │
-│  Email: [joao@email.com            ] ❌        │
-│  Mensagem: Use outro email                     │
-│  CPF: [12345678901                 ] ✅        │
-│  Telefone: [(11) 99999-8888        ] ✅        │
-│  Data Nascimento: [15/03/1990       ] ✅        │
+│        ⚠️ Não foi possível realizar o login    │
 │                                                │
-│  [ SALVAR ]  [ CANCELAR ]  [ LIMPAR ]          │
+│        E-mail ou senha incorretos.             │
+│        Verifique seus dados e tente novamente. │
+│                                                │
+│              ┌──────────────────┐              │
+│              │ usuario@email.com │              │
+│              └──────────────────┘              │
+│                                                │
+│              ┌──────────────────┐              │
+│              │ •••••••••••••• 👁│ ❌           │
+│              └──────────────────┘              │
+│                                                │
+│              [     ENTRAR     ]                │
 │                                                │
 └────────────────────────────────────────────────┘
 ```
 
-**Mockup - Tela 5: Sucesso (Confirmação)**
+**Mockup - Tela 4: Sucesso (Confirmação)**
 ```
 ┌────────────────────────────────────────────────┐
-│  ☰ Hotel Management  [Usuário ▼]              │
-├────────────────────────────────────────────────┤
 │                                                │
-│  ✅ Hóspede cadastrado com sucesso!            │
+│                  LIBRANDO                       │
 │                                                │
-│  Dados salvos:                                 │
-│  • Nome: João Silva                            │
-│  • Email: joao.silva@email.com                 │
-│  • ID Hóspede: HSP-2026-0001234                │
+│          ✅ Login realizado com sucesso!       │
 │                                                │
-│  Confirmação enviada para: joao.silva@...     │
+│             Bem-vindo ao Librando!             │
 │                                                │
-│  [ NOVO CADASTRO ]  [ VER DETALHES ]  [ VOLTAR ]│
+│          Redirecionando para o início...       │
+│                                                │
+│                   ⟳                            │
 │                                                │
 └────────────────────────────────────────────────┘
 ```
@@ -398,16 +586,21 @@ Não aplicável nesta etapa |
 - **Estado Normal:** Todos campos em branco, botões habilitados
 - **Estado Preenchido:** Validação visual com checkmark verde
 - **Estado Erro:** Campo inválido destacado em vermelho com mensagem
-- **Estado Loading:** Spinner animado, botões desabilitados
 - **Estado Sucesso:** Mensagem de confirmação com dados salvos
 
 **Fluxo de Navegação:**
-1. Página inicial → Clica "Novo Hóspede"
-2. Abre modal/página de cadastro
-3. Preenche dados
-4. Clica "Salvar"
-5. Se sucesso → Exibe mensagem + volta à lista
-6. Se erro → Destaca campo + exibe mensagem + mantém dados
+O fluxo funciona da seguinte maneira:
+
+1. O usuário acessa a Tela de Login.
+2. Informa seu e-mail e senha.
+3. Seleciona ENTRAR.
+4. O sistema envia os dados para o back-end PHP.
+5. O back-end consulta o usuário no banco de dados.
+6. A senha informada é comparada com o hash armazenado.
+7. Se as credenciais forem inválidas, o usuário permanece na tela de login e recebe uma mensagem de erro.
+8. Se as credenciais forem válidas, o sistema cria a sessão do usuário e o encaminha para a Página Inicial do Librando.
+9. Caso selecione CADASTRE-SE, o usuário é direcionado para a tela de cadastro.
+10. Caso selecione Esqueceu a senha?, é direcionado para o fluxo de recuperação de senha.
 
 **Responsividade:**
 - **Mobile (320px):** Layout single-column, campos full-width
