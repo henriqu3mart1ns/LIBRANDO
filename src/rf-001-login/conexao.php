@@ -9,7 +9,7 @@ $banco = "defaultdb";
 $conexao = mysqli_init();
 
 mysqli_ssl_set(
-    $conn,
+    $conexao,
     NULL,
     NULL,
     NULL,
