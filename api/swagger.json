@@ -1,0 +1,56 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Librando API",
+    "description": "API utilizada pelo sistema Librando.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/login.php": {
+      "post": {
+        "summary": "Realizar login",
+        "description": "Valida as credenciais de um usuário cadastrado.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "email",
+                  "senha"
+                ],
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "usuario@email.com"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "format": "password",
+                    "example": "123456"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login realizado com sucesso."
+          },
+          "400": {
+            "description": "Dados não informados ou inválidos."
+          },
+          "401": {
+            "description": "E-mail ou senha incorretos."
+          },
+          "500": {
+            "description": "Erro interno do servidor."
+          }
+        }
+      }
+    }
+  }
+}
