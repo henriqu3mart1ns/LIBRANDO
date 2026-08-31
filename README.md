@@ -541,7 +541,7 @@ A especificação foi elaborada com base nos requisitos definidos para a tela de
 └────────────────────────────────────────────────┘
 ```
 
-**Mockup - Tela 3: Erro de Validação (Email Duplicado)**
+**Mockup - Tela 3: Erro de Validação ($enha inválida)**
 ```
 ┌────────────────────────────────────────────────┐
 │                                                │
