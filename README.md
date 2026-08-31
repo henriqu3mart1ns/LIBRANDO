@@ -427,3 +427,67 @@ Não aplicável nesta etapa |
 - ✅ Dados persistindo em banco de dados
 - ✅ **Aplicação FUNCIONANDO e ACESSÍVEL online**
 - ✅ Demonstração prática durante apresentação
+
+## 🏗️ 5. ARQUITETURA E ADR
+
+┌───────────────┐
+│    Usuário    │
+└───────┬───────┘
+        │
+        ▼
+┌───────────────┐
+│   Front-end   │
+│ HTML/CSS/JS   │
+└───────┬───────┘
+        │ HTTP
+        ▼
+┌───────────────┐
+│   Back-end    │
+│     PHP       │
+└───────┬───────┘
+        │ SQL
+        ▼
+┌───────────────┐
+│   Banco de    │
+│     Dados     │
+│    SQLite     │
+└───────────────┘
+
+ADR-001 — Escolha do banco de dados
+
+Status: Aceito
+
+Contexto:
+O sistema precisa de um banco de dados para armazenar
+os usuários e validar o login.
+
+Decisão:
+Será utilizado SQLite.
+
+Motivo:
+O projeto possui pequeno volume de dados e o SQLite
+é simples de configurar e não exige um servidor de banco
+de dados separado.
+
+Consequências:
++ Fácil configuração
++ Baixo custo
++ Simples para desenvolvimento
+- Menos adequado para grandes volumes de usuários
+
+## 🔒 6. VALIDAÇÃO DE SEGURANÇA OWASP
+
+VALIDAÇÃO DE SEGURANÇA OWASP
+
+Foram analisadas as principais vulnerabilidades aplicáveis ao
+sistema, tomando como referência as recomendações da OWASP.
+
+- SQL Injection: utilização de consultas preparadas.
+- Armazenamento de senhas: utilização de password_hash().
+- XSS: tratamento dos dados recebidos e exibidos pelo sistema.
+- Autenticação: validação das credenciais no back-end.
+- Controle de acesso: validação das permissões antes de acessar
+  recursos protegidos.
+- Gerenciamento de sessão: utilização de sessões PHP e logout.
+- Validação de entrada: dados recebidos pelo usuário são
+  validados no back-end.
