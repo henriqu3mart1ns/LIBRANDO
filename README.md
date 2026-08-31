@@ -681,3 +681,78 @@ sistema, tomando como referência as recomendações da OWASP.
 - Gerenciamento de sessão: utilização de sessões PHP e logout.
 - Validação de entrada: dados recebidos pelo usuário são
   validados no back-end.
+
+## 📚 7. DOCUMENTAÇÃO API (SWAGGER/OPENAPI) (3%)
+
+**Objetivo:** Documentar endpoints REST da API usando Swagger/OpenAPI.
+
+#### Exemplo Prático — RF-001: Documentação Swagger
+
+**Arquivo:** `docs/api/swagger.json`
+
+```json
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Librando API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/login.php": {
+      "post": {
+        "summary": "Realizar login",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["email", "senha"],
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "usuario@email.com"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "example": "123456"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login realizado com sucesso"
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "E-mail ou senha incorretos"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Para visualizar a documentação:**
+O arquivo `swagger.json` pode ser aberto em uma ferramenta compatível com **Swagger UI**, permitindo visualizar os endpoints, parâmetros, respostas e códigos HTTP da API.
+
+**Endpoints documentados:**
+
+* `POST /login.php` — Realizar login do usuário.
+
+**Autenticação:**
+
+* O usuário envia e-mail e senha.
+* O backend PHP consulta o usuário no banco de dados.
+* A senha é validada utilizando `password_verify()`.
+* Em caso de sucesso, uma sessão PHP é criada.
+
