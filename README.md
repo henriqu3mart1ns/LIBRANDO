@@ -287,6 +287,8 @@ Não aplicável nesta etapa |
 - ✅ Aplicação acessível via URL pública
 - ✅ Demonstração prática funcionando
 
+# 4 PREENCHER AQUI
+
 #### Exemplo Prático — RF-001: Mockup das Telas
 
 **Mockup - Tela 1: Formulário Vazio (Estado Inicial)**
