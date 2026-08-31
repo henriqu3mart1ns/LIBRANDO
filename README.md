@@ -690,6 +690,21 @@ Consequências:
 + Simples para desenvolvimento
 - Menos adequado para grandes volumes de usuários
 
+ADR-002 — Escolha do back-end
+
+Contexto:
+Precisamos implementar a autenticação dos usuários.
+
+Decisão:
+Utilizar PHP no back-end.
+
+Motivo:
+PHP é compatível com a hospedagem escolhida e atende
+às necessidades do projeto.
+
+Status: Aceito
+
+
 ## 🔒 6. VALIDAÇÃO DE SEGURANÇA OWASP
 
 VALIDAÇÃO DE SEGURANÇA OWASP
