@@ -6,7 +6,7 @@ $usuario = "avnadmin";
 $senha = "AVNS_dPSGvYcV_spdSgeWM5E";
 $banco = "defaultdb";
 
-$conn = mysqli_init();
+$conexao = mysqli_init();
 
 mysqli_ssl_set(
     $conn,
@@ -18,7 +18,7 @@ mysqli_ssl_set(
 );
 
 if (!mysqli_real_connect(
-    $conn,
+    $conexao,
     $host,
     $usuario,
     $senha,
@@ -30,4 +30,4 @@ if (!mysqli_real_connect(
     die("Erro ao conectar ao banco de dados.");
 }
 
-$conn->set_charset("utf8mb4");
+$conexao->set_charset("utf8mb4");
