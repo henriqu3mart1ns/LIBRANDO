@@ -75,7 +75,7 @@ librando/
 
 # 3. DETALHAMENTO TÉCNICO DE UM REQUISITO FUNCIONAL
 
-## 🎯 3.1 IDENTIFICAÇÃO DO REQUISITO
+## 🎯 1. IDENTIFICAÇÃO DO REQUISITO
 
 * **ID:** RF-001
 
@@ -98,7 +98,7 @@ librando/
 
 ---
 
-# 📋  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
+# 📋 2.  DESCRIÇÃO E ATORES — RF: Tela de Login da Rede Social
 
 ## **Descrição Detalhada**
 
