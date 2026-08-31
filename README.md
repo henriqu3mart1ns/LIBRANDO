@@ -43,8 +43,6 @@ librando/
 │       ├── index.html
 │       ├── login.php
 │       ├── conexao.php
-│       ├── css/
-│       │   └── style.css
 │       └── README.md
 │
 ├── database/
