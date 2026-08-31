@@ -64,7 +64,7 @@ librando/
 
 * **Documentação:** `docs/requisitos/RF-001-login.md`
 * **Página de login:** `src/rf-001-login/index.html`
-* **Estilos CSS:** `src/rf-001-login/css/style.css`
+* **Estilos CSS:** `src/rf-001-login/index.html`
 * **Processamento do login:** `src/rf-001-login/login.php`
 * **Conexão com o banco:** `src/rf-001-login/conexao.php`
 * **Script de criação do banco:** `database/ddl/rf-001-usuarios-ddl.sql`
