@@ -425,46 +425,6 @@ A especificação foi elaborada com base nos requisitos definidos para a tela de
 | **RS-LOGIN-004** | Sessão Segura | A sessão autenticada deve possuir mecanismos para reduzir riscos de sequestro ou reutilização indevida. |
 | **RS-LOGIN-005** | Logout | O sistema deve permitir que o usuário encerre sua sessão autenticada. |
 
-## ♿ Acessibilidade
-
-| ID | Requisito | Descrição |
-|:---:|:---|:---|
-| **RA-LOGIN-001** | Comunicação Visual | Informações essenciais devem possuir representação visual e não depender exclusivamente de sons. |
-| **RA-LOGIN-002** | Suporte em Libras | A tela deve disponibilizar acesso a uma explicação em Libras sobre login, recuperação de senha e criação de conta. |
-| **RA-LOGIN-003** | Legendas | Vídeos em Libras devem possuir legendas quando aplicável. |
-| **RA-LOGIN-004** | Contraste | A interface deve possuir contraste adequado entre textos, fundos, botões, campos e mensagens. |
-| **RA-LOGIN-005** | Tamanho dos Elementos | Campos, botões e textos devem possuir tamanho adequado para visualização e interação. |
-| **RA-LOGIN-006** | Navegação por Teclado | Campos e controles interativos devem poder ser acessados e utilizados por teclado. |
-| **RA-LOGIN-007** | Identificação dos Campos | Cada campo deve possuir identificação clara e persistente. |
-
-## 🖥️ Usabilidade
-
-| ID | Requisito | Descrição |
-|:---:|:---|:---|
-| **RU-LOGIN-001** | Interface Simples | A tela deve apresentar somente as informações necessárias ao login, evitando excesso de elementos. |
-| **RU-LOGIN-002** | Feedback Visual | O sistema deve apresentar feedback visual para ações bem-sucedidas, erros e estados importantes. |
-| **RU-LOGIN-003** | Estado de Carregamento | Durante o processamento, o botão deve apresentar um indicador visual e impedir múltiplos envios simultâneos. |
-| **RU-LOGIN-004** | Responsividade | A tela deve funcionar adequadamente em computadores, notebooks, tablets e smartphones. |
-
-# 🧪 Casos de Teste Relacionados
-
-| ID | Cenário | Resultado Esperado |
-|:---:|:---|:---|
-| **CT01** | Informar e-mail e senha corretos | Usuário acessa a plataforma. |
-| **CT02** | Informar e-mail incorreto | Login não é realizado. |
-| **CT03** | Informar senha incorreta | Login não é realizado. |
-| **CT04** | Deixar e-mail vazio | Sistema informa que o campo é obrigatório. |
-| **CT05** | Deixar senha vazia | Sistema informa que o campo é obrigatório. |
-| **CT06** | Informar e-mail em formato inválido | Sistema informa que o e-mail é inválido. |
-| **CT07** | Selecionar "Esqueci minha senha" | Sistema abre a recuperação de senha. |
-| **CT08** | Selecionar "Criar conta" | Sistema abre o cadastro. |
-| **CT09** | Selecionar "Visualizar senha" | Senha fica visível. |
-| **CT10** | Selecionar novamente "Visualizar senha" | Senha volta a ficar oculta. |
-| **CT11** | Tentar login com conta desativada | Sistema impede o acesso. |
-| **CT12** | Acessar recurso de Libras | Sistema apresenta orientação em Libras. |
-| **CT13** | Navegar usando teclado | Elementos interativos podem ser acessados. |
-| **CT14** | Acessar pelo celular | Tela adapta-se ao tamanho da tela. |
-| **CT15** | Errar login | Mensagem visual é apresentada. |
 
 ## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + CÓDIGO + BD + DEPLOY) (40%)
 
