@@ -262,3 +262,166 @@ Após o login, o administrador poderá realizar atividades específicas de geren
 | **UPDATE** | ✅ | Pode alterar informações ou status de usuários e conteúdos conforme suas permissões administrativas. |
 | **DELETE** | ✅ | Pode excluir ou remover registros e conteúdos quando essa ação estiver prevista para a administração da plataforma. |
 Não aplicável nesta etapa |
+
+## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + CÓDIGO + BD + DEPLOY) (40%)
+
+**Objetivo:** Implementação COMPLETA e FUNCIONAL da feature, com aplicação rodando em produção.
+
+⚠️ **OBRIGATORIEDADE CRÍTICA:**
+- ✅ Arquivo `index.html` com CSS embutido
+- ✅ Código-fonte COMPLETO na linguagem escolhida (JavaScript, Python, Java, etc)
+- ✅ Script DDL do banco de dados
+- ✅ Aplicação FUNCIONANDO em GitHub Pages, Vercel, Netlify ou similar
+- ✅ Banco de dados persistindo dados (Supabase, Firebase, MongoDB Atlas, etc)
+- ✅ Sem funcionalidade completa = **0% neste tópico (PERDE 40% DA NOTA)**
+
+**O que avaliar:**
+- ✅ Arquivo HTML+CSS entregue (semântica correta)
+- ✅ Código-fonte presente no repositório GitHub
+- ✅ Script DDL criando tabelas necessárias
+- ✅ Telas: vazio, preenchido, erro, carregando, sucesso
+- ✅ CSS responsivo (mobile 320px, desktop 1024px)
+- ✅ Validação visual (borda verde/vermelha, checkmark)
+- ✅ Mensagens de erro claras
+- ✅ Dados persistindo em BD (comprovável)
+- ✅ Aplicação acessível via URL pública
+- ✅ Demonstração prática funcionando
+
+#### Exemplo Prático — RF-001: Mockup das Telas
+
+**Mockup - Tela 1: Formulário Vazio (Estado Inicial)**
+```
+┌────────────────────────────────────────────────┐
+│  ☰ Hotel Management  [Usuário ▼]              │
+├────────────────────────────────────────────────┤
+│                                                │
+│  📝 Cadastro de Novo Hóspede                   │
+│                                                │
+│  Nome Completo: [_________________________]    │
+│  Email:         [_________________________]    │
+│  CPF:           [_________________________]    │
+│  Telefone:      [_________________________]    │
+│  Data Nascimento: [_________________________]   │
+│                                                │
+│  Observações:                                  │
+│  [_________________________________]           │
+│  [_________________________________]           │
+│                                                │
+│  [ SALVAR ]  [ CANCELAR ]  [ LIMPAR ]          │
+│                                                │
+└────────────────────────────────────────────────┘
+```
+
+**Mockup - Tela 2: Formulário Preenchido (Validação Visual)**
+```
+┌────────────────────────────────────────────────┐
+│  ☰ Hotel Management  [Usuário ▼]              │
+├────────────────────────────────────────────────┤
+│                                                │
+│  📝 Cadastro de Novo Hóspede                   │
+│                                                │
+│  Nome: [João da Silva              ] ✅        │
+│  Email: [joao.silva@email.com      ] ✅        │
+│  CPF: [12345678901                 ] ✅        │
+│  Telefone: [(11) 99999-8888        ] ✅        │
+│  Data Nascimento: [15/03/1990       ] ✅        │
+│                                                │
+│  Observações:                                  │
+│  [Cliente VIP, pedir upgrade ao   ]            │
+│  [check-in                        ]            │
+│                                                │
+│  [ SALVAR ]  [ CANCELAR ]  [ LIMPAR ]          │
+│                                                │
+└────────────────────────────────────────────────┘
+```
+
+**Mockup - Tela 3: Carregando (Processando)**
+```
+┌────────────────────────────────────────────────┐
+│  ☰ Hotel Management  [Usuário ▼]              │
+├────────────────────────────────────────────────┤
+│                                                │
+│         Salvando dados do hóspede...           │
+│              ⟳  (spinner)                      │
+│                                                │
+│         Aguarde um momento...                  │
+│                                                │
+│  [ CANCELAR ]                                  │
+│                                                │
+└────────────────────────────────────────────────┘
+```
+
+**Mockup - Tela 4: Erro de Validação (Email Duplicado)**
+```
+┌────────────────────────────────────────────────┐
+│  ☰ Hotel Management  [Usuário ▼]              │
+├────────────────────────────────────────────────┤
+│                                                │
+│  ⚠️ ERRO ao cadastrar hóspede                  │
+│  Este email já está cadastrado no sistema      │
+│                                                │
+│  Nome: [João Silva                 ] ✅        │
+│  Email: [joao@email.com            ] ❌        │
+│  Mensagem: Use outro email                     │
+│  CPF: [12345678901                 ] ✅        │
+│  Telefone: [(11) 99999-8888        ] ✅        │
+│  Data Nascimento: [15/03/1990       ] ✅        │
+│                                                │
+│  [ SALVAR ]  [ CANCELAR ]  [ LIMPAR ]          │
+│                                                │
+└────────────────────────────────────────────────┘
+```
+
+**Mockup - Tela 5: Sucesso (Confirmação)**
+```
+┌────────────────────────────────────────────────┐
+│  ☰ Hotel Management  [Usuário ▼]              │
+├────────────────────────────────────────────────┤
+│                                                │
+│  ✅ Hóspede cadastrado com sucesso!            │
+│                                                │
+│  Dados salvos:                                 │
+│  • Nome: João Silva                            │
+│  • Email: joao.silva@email.com                 │
+│  • ID Hóspede: HSP-2026-0001234                │
+│                                                │
+│  Confirmação enviada para: joao.silva@...     │
+│                                                │
+│  [ NOVO CADASTRO ]  [ VER DETALHES ]  [ VOLTAR ]│
+│                                                │
+└────────────────────────────────────────────────┘
+```
+
+**Descrição de Estados:**
+- **Estado Normal:** Todos campos em branco, botões habilitados
+- **Estado Preenchido:** Validação visual com checkmark verde
+- **Estado Erro:** Campo inválido destacado em vermelho com mensagem
+- **Estado Loading:** Spinner animado, botões desabilitados
+- **Estado Sucesso:** Mensagem de confirmação com dados salvos
+
+**Fluxo de Navegação:**
+1. Página inicial → Clica "Novo Hóspede"
+2. Abre modal/página de cadastro
+3. Preenche dados
+4. Clica "Salvar"
+5. Se sucesso → Exibe mensagem + volta à lista
+6. Se erro → Destaca campo + exibe mensagem + mantém dados
+
+**Responsividade:**
+- **Mobile (320px):** Layout single-column, campos full-width
+- **Tablet (768px):** Layout single-column com padding maior
+- **Desktop (1024px+):** Layout potencialmente two-column se apropriado
+
+**CRITÉRIOS DE ACEITE PARA 40/40:**
+- ✅ Arquivo index.html com CSS embutido criado
+- ✅ Código-fonte completo no repositório GitHub
+- ✅ Script DDL no banco de dados
+- ✅ Mínimo 5 telas diferentes (vazio, preenchido, erro, loading, sucesso)
+- ✅ HTML semanticamente correto
+- ✅ CSS responsivo (mobile + desktop)
+- ✅ Validação visual (borda verde/vermelha, checkmark)
+- ✅ Mensagens de erro claras
+- ✅ Estados diferentes bem definidos
+- ✅ Dados persistindo em banco de dados
+- ✅ **Aplicação FUNCIONANDO e ACESSÍVEL online**
+- ✅ Demonstração prática durante apresentação
