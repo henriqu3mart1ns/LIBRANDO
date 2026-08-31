@@ -490,7 +490,7 @@ A especificação foi elaborada com base nos requisitos definidos para a tela de
 - ✅ Aplicação acessível via URL pública
 - ✅ Demonstração prática funcionando
 
-# 4. PREENCHER AQUI
+## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + PHP + BD + RENDER)
 
 #### Exemplo Prático — RF-001: Mockup das Telas
 
@@ -623,28 +623,50 @@ O fluxo funciona da seguinte maneira:
 
 ## 🏗️ 5. ARQUITETURA E ADR
 
-┌───────────────┐
-│    Usuário    │
-└───────┬───────┘
-        │
-        ▼
-┌───────────────┐
-│   Front-end   │
-│ HTML/CSS/JS   │
-└───────┬───────┘
-        │ HTTP
-        ▼
-┌───────────────┐
-│   Back-end    │
-│     PHP       │
-└───────┬───────┘
-        │ SQL
-        ▼
-┌───────────────┐
-│   Banco de    │
-│     Dados     │
-│    SQLite     │
-└───────────────┘
+#### Exemplo Prático — RF-001: Arquitetura Completa
+
+### Diagrama de Componentes
+
+```text
+┌──────────────────────────────────────────────┐
+│             Frontend — Librando              │
+│       HTML5 + CSS3 + JavaScript              │
+│                                              │
+│  • index.html (Tela de Login)                │
+│  • cadastro.html (Cadastro de Usuário)       │
+│  • app.js (Interações + API calls)           │
+│  • Interface acessível                       │
+│  • Libras / recursos de acessibilidade       │
+└──────────────────────┬───────────────────────┘
+                       │
+                       │ HTTPS + HTTP
+                       ▼
+┌──────────────────────────────────────────────┐
+│             Backend — PHP                    │
+│                                              │
+│  • login.php (Autenticação)                  │
+│  • cadastro.php (Cadastro de Usuários)       │
+│  • conexao.php (Conexão com Banco)           │
+│  • Validação dos dados                       │
+│  • Gerenciamento de sessões                  │
+│  • password_hash() / password_verify()       │
+└──────────────────────┬───────────────────────┘
+                       │
+                       │ PDO / SQL
+                       ▼
+┌──────────────────────────────────────────────┐
+│              Banco de Dados                  │
+│                  SQLite                      │
+│                                              │
+│  • Tabela: usuarios                          │
+│  • ID do usuário                             │
+│  • Nome                                      │
+│  • E-mail                                    │
+│  • Senha (hash)                              │
+│  • Dados de cadastro                         │
+│  • Restrições e validações                   │
+└──────────────────────────────────────────────┘
+```
 
 ADR-001 — Escolha do banco de dados
 
