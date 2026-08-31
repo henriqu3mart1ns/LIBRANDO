@@ -1,14 +1,33 @@
 <?php
 
-$host = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "librando";
+$host = "mysql-baa4d2f-tutoriaisgameshd-bf6a.c.aivencloud.com";
+$porta = 20179;
+$usuario = "avnadmin";
+$senha = "AVNS_dPSGvYcV_spdSgeWM5E";
+$banco = "defaultdb";
 
-$conexao = new mysqli($host, $usuario, $senha, $banco);
+$conn = mysqli_init();
 
-if ($conexao->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
+mysqli_ssl_set(
+    $conn,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL
+);
+
+if (!mysqli_real_connect(
+    $conn,
+    $host,
+    $usuario,
+    $senha,
+    $banco,
+    $porta,
+    NULL,
+    MYSQLI_CLIENT_SSL
+)) {
+    die("Erro ao conectar ao banco de dados.");
 }
 
-$conexao->set_charset("utf8mb4");
+$conn->set_charset("utf8mb4");
