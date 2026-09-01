@@ -426,31 +426,8 @@ A especificação foi elaborada com base nos requisitos definidos para a tela de
 | **RS-LOGIN-005** | Logout | O sistema deve permitir que o usuário encerre sua sessão autenticada. |
 
 
-## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + CÓDIGO + BD + DEPLOY) (40%)
 
-**Objetivo:** Implementação COMPLETA e FUNCIONAL da feature, com aplicação rodando em produção.
-
-⚠️ **OBRIGATORIEDADE CRÍTICA:**
-- ✅ Arquivo `index.html` com CSS embutido
-- ✅ Código-fonte COMPLETO na linguagem escolhida (JavaScript, Python, Java, etc)
-- ✅ Script DDL do banco de dados
-- ✅ Aplicação FUNCIONANDO em GitHub Pages, Vercel, Netlify ou similar
-- ✅ Banco de dados persistindo dados (Supabase, Firebase, MongoDB Atlas, etc)
-- ✅ Sem funcionalidade completa = **0% neste tópico (PERDE 40% DA NOTA)**
-
-**O que avaliar:**
-- ✅ Arquivo HTML+CSS entregue (semântica correta)
-- ✅ Código-fonte presente no repositório GitHub
-- ✅ Script DDL criando tabelas necessárias
-- ✅ Telas: vazio, preenchido, erro, carregando, sucesso
-- ✅ CSS responsivo (mobile 320px, desktop 1024px)
-- ✅ Validação visual (borda verde/vermelha, checkmark)
-- ✅ Mensagens de erro claras
-- ✅ Dados persistindo em BD (comprovável)
-- ✅ Aplicação acessível via URL pública
-- ✅ Demonstração prática funcionando
-
-## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + PHP + BD + RENDER)
+## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + PHP + MySQL + RENDER)
 
 #### Exemplo Prático — RF-001: Mockup das Telas
 
