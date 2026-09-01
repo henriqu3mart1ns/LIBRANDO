@@ -558,7 +558,8 @@ O fluxo funciona da seguinte maneira:
 │       HTML5 + CSS3 + JavaScript              │
 │                                              │
 │  • index.html (Tela de Login)                │      
-│  • Interface acessível                       │      
+│  • Interface acessível                       |
+|  • Hospedado em GitHub Pages                 │      
 └──────────────────────┬───────────────────────┘
                        │
                        │ HTTPS + HTTP
@@ -569,7 +570,8 @@ O fluxo funciona da seguinte maneira:
 │  • login.php (Autenticação)                  │       
 │  • conexao.php (Conexão com Banco)           │
 │  • Validação dos dados                       │                 
-│  • password_hash() / password_verify()       │
+│  • password_hash() / password_verify()       |
+|   • Hospedado em Render                      │
 └──────────────────────┬───────────────────────┘
                        │
                        │ PDO / SQL
@@ -579,10 +581,9 @@ O fluxo funciona da seguinte maneira:
 │                  SQLite                      │
 │                                              │
 │  • Tabela: usuarios                          │
-│  • ID do usuário                             │                                      
-│  • E-mail                                    │
+│  • ID do usuário                             │                                                                         
 │  • Senha (hash)                              │
-│  • Dados de cadastr                          │
+│  • Dados de cadastro                         │
 │  • Restrições e validações                   │
 └──────────────────────────────────────────────┘
 ```
