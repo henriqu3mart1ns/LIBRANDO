@@ -624,6 +624,19 @@ PHP é compatível com a hospedagem escolhida e atende
 
 Status: Aceito
 
+### Tecnologias Escolhidas
+
+| Camada | Tecnologia | Versão | Justificativa |
+|--------|-----------|--------|---------------|
+| Frontend | HTML5 + CSS3 | HTML5 / CSS3 | Estrutura e estilização da tela de login |
+| Backend | PHP | 8.x | Processamento da autenticação e comunicação com o banco |
+| Banco de Dados | MySQL | 8.x | Armazenamento dos usuários e credenciais |
+| Banco de Dados | Aiven Cloud | — | Hospedagem online gratuita do banco de dados MySQL |
+| Conexão BD | MySQLi | PHP 8.x | Conexão do backend PHP com o banco MySQL |
+| Hash | password_hash() / password_verify() | PHP 8.x | Armazenamento e verificação segura das senhas |
+| Servidor | Render | — | Hospedagem online do backend PHP |
+| Acessibilidade | VLibras | Atual | Suporte à acessibilidade e tradução para Libras |
+
 
 ## 🔒 6. VALIDAÇÃO DE SEGURANÇA OWASP
 
