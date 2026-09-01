@@ -544,19 +544,7 @@ O fluxo funciona da seguinte maneira:
 - **Tablet (768px):** Layout single-column com padding maior
 - **Desktop (1024px+):** Layout potencialmente two-column se apropriado
 
-**CRITÉRIOS DE ACEITE PARA 40/40:**
-- ✅ Arquivo index.html com CSS embutido criado
-- ✅ Código-fonte completo no repositório GitHub
-- ✅ Script DDL no banco de dados
-- ✅ Mínimo 5 telas diferentes (vazio, preenchido, erro, loading, sucesso)
-- ✅ HTML semanticamente correto
-- ✅ CSS responsivo (mobile + desktop)
-- ✅ Validação visual (borda verde/vermelha, checkmark)
-- ✅ Mensagens de erro claras
-- ✅ Estados diferentes bem definidos
-- ✅ Dados persistindo em banco de dados
-- ✅ **Aplicação FUNCIONANDO e ACESSÍVEL online**
-- ✅ Demonstração prática durante apresentação
+
 
 ## 🏗️ 5. ARQUITETURA E ADR
 
