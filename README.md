@@ -557,10 +557,8 @@ O fluxo funciona da seguinte maneira:
 │             Frontend — Librando              │
 │       HTML5 + CSS3 + JavaScript              │
 │                                              │
-│  • index.html (Tela de Login)                │
-│  • cadastro.html (Cadastro de Usuário)       │
-│  • app.js (Interações + API calls)           │
-│  • Interface acessível                       │      │
+│  • index.html (Tela de Login)                │      
+│  • Interface acessível                       │      
 └──────────────────────┬───────────────────────┘
                        │
                        │ HTTPS + HTTP
@@ -568,9 +566,9 @@ O fluxo funciona da seguinte maneira:
 ┌──────────────────────────────────────────────┐
 │             Backend — PHP                    │
 │                                              │
-│  • login.php (Autenticação)                  │       │
+│  • login.php (Autenticação)                  │       
 │  • conexao.php (Conexão com Banco)           │
-│  • Validação dos dados                       │                 │
+│  • Validação dos dados                       │                 
 │  • password_hash() / password_verify()       │
 └──────────────────────┬───────────────────────┘
                        │
@@ -581,7 +579,7 @@ O fluxo funciona da seguinte maneira:
 │                  SQLite                      │
 │                                              │
 │  • Tabela: usuarios                          │
-│  • ID do usuário                             │                                      │
+│  • ID do usuário                             │                                      
 │  • E-mail                                    │
 │  • Senha (hash)                              │
 │  • Dados de cadastr                          │
