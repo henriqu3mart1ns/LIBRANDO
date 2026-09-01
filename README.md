@@ -540,9 +540,9 @@ O fluxo funciona da seguinte maneira:
 10. Caso selecione Esqueceu a senha?, é direcionado para o fluxo de recuperação de senha.
 
 **Responsividade:**
-- **Mobile (320px):** Layout single-column, campos full-width
-- **Tablet (768px):** Layout single-column com padding maior
-- **Desktop (1024px+):** Layout potencialmente two-column se apropriado
+- **Mobile (até 980px):** Layout single-column, campos full-width
+- **Tablet (até 980px):** Layout single-column com padding maior
+- **Desktop (980px+):** Layout potencialmente two-column se apropriado
 
 
 
