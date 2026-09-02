@@ -62,44 +62,50 @@ O processo deve apresentar mensagens claras de sucesso ou erro, além de conside
 
 ## Atores do Sistema
 
+## Atores do Sistema
+
 ### 1. USUÁRIO NÃO CADASTRADO (Ator Principal)
 
 - **Papel:** Realizar o cadastro de uma nova conta na rede social.
 - **Responsabilidade:** Fornecer corretamente os dados solicitados pelo sistema e concluir o processo de criação da conta.
-- **Permissões:**
-  - ✅ **CREATE** — criar uma nova conta de usuário;
-  - ❌ **READ** — não possui acesso aos dados de outros usuários durante o cadastro;
-  - ❌ **UPDATE** — não pode alterar dados de contas de outros usuários;
-  - ❌ **DELETE** — não pode excluir contas de outros usuários.
+
+**Permissões:**
+
+| Operação | Permissão | Descrição |
+| :------: | :-------: | :-------- |
+| CREATE | ✅ | Criar sua própria conta de usuário |
+| READ | ❌ | Não possui acesso aos dados de outros usuários durante o cadastro |
+| UPDATE | ❌ | Não pode alterar dados de outras contas |
+| DELETE | ❌ | Não pode excluir contas de outros usuários |
+
+---
 
 ### 2. ADMINISTRADOR (Ator Secundário)
 
 - **Papel:** Gerenciar e supervisionar os usuários cadastrados na plataforma.
-- **Responsabilidade:** Administrar os registros de usuários, verificar informações quando necessário e realizar ações administrativas sobre as contas.
-- **Permissões:**
-  - ✅ **CREATE** — pode cadastrar usuários administrativamente, caso essa funcionalidade seja disponibilizada;
-  - ✅ **READ** — visualizar dados dos usuários conforme suas permissões;
-  - ✅ **UPDATE** — alterar dados ou informações administrativas das contas;
-  - ✅ **DELETE** — excluir ou desativar contas conforme as regras do sistema.
+- **Responsabilidade:** Administrar os registros de usuários, verificar informações e realizar ações administrativas sobre as contas.
+
+**Permissões:**
+
+| Operação | Permissão | Descrição |
+| :------: | :-------: | :-------- |
+| CREATE | ✅ | Pode cadastrar usuários administrativamente, caso essa funcionalidade seja disponibilizada |
+| READ | ✅ | Visualizar dados dos usuários conforme suas permissões |
+| UPDATE | ✅ | Alterar dados ou informações administrativas das contas |
+| DELETE | ✅ | Excluir ou desativar contas conforme as regras do sistema |
+
+---
 
 ### 3. SISTEMA (Ator Automático)
 
 - **Papel:** Processar, validar e armazenar os dados fornecidos durante o cadastro.
 - **Responsabilidade:** Validar os campos preenchidos, verificar as regras de negócio, verificar a existência de cadastro duplicado, armazenar os dados de forma segura e informar o resultado da operação ao usuário.
-- **Permissões:**
-  - ✅ **CREATE** — criar o registro do usuário no banco de dados;
-  - ✅ **READ** — consultar informações necessárias para validar o cadastro;
-  - ✅ **UPDATE** — atualizar informações durante o processamento, quando necessário;
-  - ✅ **DELETE** — executar exclusões relacionadas ao processo quando previstas pelas regras do sistema.
 
----
+**Permissões:**
 
-## 📌 Resumo dos Atores
-
-| Ator | Tipo | Principal responsabilidade | CREATE | READ | UPDATE | DELETE |
-|---|---|---|:---:|:---:|:---:|:---:|
-| **Usuário Não Cadastrado** | Principal | Criar sua própria conta | ✅ | ❌ | ❌ | ❌ |
-| **Administrador** | Secundário | Gerenciar usuários da plataforma | ✅ | ✅ | ✅ | ✅ |
-| **Sistema** | Automático | Validar e processar o cadastro | ✅ | ✅ | ✅ | ✅ |
-
----
+| Operação | Permissão | Descrição |
+| :------: | :-------: | :-------- |
+| CREATE | ✅ | Criar o registro do usuário no banco de dados |
+| READ | ✅ | Consultar informações necessárias para validar o cadastro |
+| UPDATE | ✅ | Atualizar informações durante o processamento, quando necessário |
+| DELETE | ✅ | Executar exclusões relacionadas ao processo quando previstas pelas regras do sistema |
