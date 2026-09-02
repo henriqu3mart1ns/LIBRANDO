@@ -1,0 +1,19 @@
+🎯 1. IDENTIFICAÇÃO DO REQUISITO
+
+    ID: RF-001
+
+    Título: Tela de Login da Rede Social
+
+    Tipo: Requisito Funcional
+
+    Prioridade: ALTA
+
+    Complexidade: MÉDIA
+
+    Status: EM DESENVOLVIMENTO
+
+    Data de Criação: [preencher]
+
+    Última Atualização: [preencher]
+
+    Breve Descrição: O sistema deve permitir que usuários previamente cadastrados realizem login na plataforma Librando por meio de e-mail e senha. As credenciais devem ser verificadas pelo backend PHP utilizando o banco de dados MySQL.
