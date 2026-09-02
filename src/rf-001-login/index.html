@@ -544,12 +544,8 @@ body {
                 Entre na sua conta para continuar.
             </p>
 
-            <form
-                class="form"
-                action="login.php"
-                method="POST"
-                novalidate
-            >
+            <form class="form" action="http://localhost/LIBRANDO-main-atualizado/src/rf-001-login/login.php" method="POST" novalidate id="loginForm">
+            
 
                 <div class="field">
 
@@ -676,8 +672,12 @@ body {
                     </a>
 
                 </div>
+                
+                <!--adicionei o id "loginMensagem" para exibir mensagens de erro ou sucesso-->
+                
+                <div id="loginMensagem" class="login-mensagem" hidden></div>
 
-                <button type="submit" class="btn btn--primary">
+                <button type="submit" class="btn btn--primary" id="btnEntrar">
                     Entrar
                 </button>
 
@@ -723,6 +723,63 @@ body {
             campoSenha.type = 'text';
         } else {
             campoSenha.type = 'password';
+        }
+    });
+</script>
+
+<!--script para enviar o formulário de login via AJAX e exibir mensagens de erro ou sucesso -->
+
+<script>
+    const loginForm = document.getElementById("loginForm");
+    const loginMensagem = document.getElementById("loginMensagem");
+    const btnEntrar = document.getElementById("btnEntrar");
+
+    loginForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        loginMensagem.hidden = true;
+        loginMensagem.className = "login-mensagem";
+
+        if (!loginForm.checkValidity()) {
+            loginForm.reportValidity();
+            return;
+        }
+
+        btnEntrar.disabled = true;
+        btnEntrar.textContent = "Entrando...";
+
+        try {
+            const resposta = await fetch(loginForm.action, {
+                method: "POST",
+                body: new FormData(loginForm)
+            });
+
+            const dados = await resposta.json();
+
+            loginMensagem.textContent = dados.mensagem;
+
+            if (dados.sucesso) {
+                loginMensagem.classList.add("login-mensagem--sucesso");
+            } else {
+                loginMensagem.classList.add("login-mensagem--erro");
+            }
+
+            loginMensagem.hidden = false;
+
+            if (dados.sucesso) {
+                loginForm.reset();
+            }
+
+        } catch (erro) {
+            loginMensagem.textContent =
+                "Não foi possível conectar ao servidor local.";
+
+            loginMensagem.classList.add("login-mensagem--erro");
+            loginMensagem.hidden = false;
+
+        } finally {
+            btnEntrar.disabled = false;
+            btnEntrar.textContent = "Entrar";
         }
     });
 </script>
