@@ -10,8 +10,8 @@
 | **🚨 Prioridade** | ALTA |
 | **⚙️ Complexidade** | MÉDIA |
 | **📊 Status** | CONCLUÍDO |
-| **📅 Data de Criação** | A definir |
-| **🔄 Última Atualização** | A definir |
+| **📅 Data de Criação** | 02/09/2026 |
+| **🔄 Última Atualização** | 02/09/2026 |
 
 ### 📖 Descrição
 
