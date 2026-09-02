@@ -107,3 +107,86 @@ O processo deve apresentar mensagens claras de sucesso ou erro, além de conside
 | READ | ✅ | Consultar informações necessárias para validar o cadastro |
 | UPDATE | ✅ | Atualizar informações durante o processamento, quando necessário |
 | DELETE | ✅ | Executar exclusões relacionadas ao processo quando previstas pelas regras do sistema |
+
+# 🔄 3. ESPECIFICAÇÃO DE CASOS DE USO + REQUISITOS NÃO-FUNCIONAIS (20%)
+
+**Objetivo:** Descrever detalhadamente como o requisito funcional de cadastro de usuários é executado, apresentando suas condições, fluxos, regras de negócio e requisitos não-funcionais.
+
+---
+
+## Caso de Uso (UC-002): Realizar Cadastro de Usuário
+
+**Requisito relacionado:** RF-002 — Tela de Cadastro de Usuários
+
+**Atores:**
+- **Usuário Não Cadastrado:** realiza o preenchimento e envio do formulário de cadastro.
+- **Administrador:** responsável pela administração das contas cadastradas, conforme suas permissões.
+- **Sistema:** realiza validações, verifica regras de negócio e armazena os dados.
+
+---
+
+## Pré-Condições
+
+- ✅ O usuário deve estar na tela de cadastro da plataforma.
+- ✅ O sistema deve estar disponível para receber a solicitação.
+- ✅ O banco de dados deve estar disponível para consulta e armazenamento.
+- ✅ O usuário ainda não deve possuir uma conta cadastrada com o mesmo e-mail.
+- ✅ Os serviços necessários para processamento do cadastro devem estar disponíveis.
+
+---
+
+## Pós-Condições — Sucesso
+
+- ✅ Uma nova conta de usuário é criada.
+- ✅ Os dados informados são validados antes do armazenamento.
+- ✅ As credenciais do usuário são armazenadas de forma segura.
+- ✅ O cadastro é registrado no banco de dados.
+- ✅ O sistema apresenta uma confirmação visual de cadastro realizado com sucesso.
+- ✅ O usuário é direcionado para a tela de login para acessar a plataforma.
+
+---
+
+## Pós-Condições — Falha
+
+- ❌ A conta não é criada.
+- ❌ Os dados inválidos não são armazenados.
+- ✅ O sistema apresenta uma mensagem visual informando o problema.
+- ✅ O campo que apresentar erro é destacado para correção.
+- ✅ O usuário permanece na tela de cadastro para corrigir as informações.
+- ✅ Em caso de falha no servidor ou banco de dados, o sistema informa que o cadastro não pôde ser concluído.
+
+---
+
+## Fluxo Principal
+
+1. Usuário Não Cadastrado acessa a opção **"Criar uma conta"** na tela de login.
+2. Sistema direciona o usuário para a **Tela de Cadastro**.
+3. Sistema apresenta o formulário contendo os campos necessários para criação da conta.
+4. Usuário preenche os campos solicitados.
+5. Sistema realiza a validação dos campos durante o preenchimento ou após a tentativa de envio.
+6. Sistema verifica se todos os campos obrigatórios foram preenchidos.
+7. Sistema valida o formato das informações fornecidas.
+8. Usuário clica no botão **"Cadastrar"**.
+9. Sistema realiza uma nova validação dos dados no servidor.
+10. Sistema verifica se o e-mail informado já possui uma conta cadastrada.
+11. Sistema verifica se as informações atendem às regras de negócio.
+12. Sistema processa os dados fornecidos pelo usuário.
+13. Sistema armazena a senha utilizando mecanismo seguro de hash, sem mantê-la em texto puro.
+14. Sistema registra os dados da nova conta no banco de dados.
+15. Sistema confirma que o cadastro foi realizado com sucesso.
+16. Sistema apresenta a mensagem visual **"Cadastro realizado com sucesso!"**.
+17. Sistema direciona o usuário para a tela de login.
+18. Usuário pode informar suas credenciais para acessar a plataforma.
+
+---
+
+## Fluxo Alternativo A1: Campos obrigatórios não preenchidos
+
+```text
+5a.1. Sistema identifica que um ou mais campos obrigatórios estão vazios.
+5a.2. Sistema impede o envio do cadastro.
+5a.3. Sistema apresenta mensagem visual informando que os campos são obrigatórios.
+5a.4. Os campos não preenchidos são destacados visualmente.
+5a.5. Usuário preenche os campos pendentes.
+5a.6. Sistema realiza novamente a validação.
+5a.7. O fluxo retorna ao passo 8 do fluxo principal.
