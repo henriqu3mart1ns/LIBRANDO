@@ -4,7 +4,7 @@
 
 | ID | Nome Completo   | Papel Primário          | Papel Secundário | E-mail / Contato |
 | :-: | :--------------- | :---------------------- | :--------------- | :--------------- |
-| 1 | André Mendes     | Scrum Master            | Fullstack        | [andre53774636@edu.df.senac.br](mailto:andre53774636@edu.df.senac.br) |
+| 1 | André Mendes     | Product Owner            | Fullstack        | [andre53774636@edu.df.senac.br](mailto:andre53774636@edu.df.senac.br) |
 | 2 | Eduardo Amorim   | Desenvolvedor Front-End | —                | [eduardo59381426@edu.df.senac.br](mailto:eduardo59381426@edu.df.senac.br) |
 | 3 | Gabriel Souza    | Desenvolvedor Back-End  | —                | [gabriel49414966@edu.df.senac.br](mailto:gabriel49414966@edu.df.senac.br) |
 | 4 | Vitor Silva      | Desenvolvedor Back-End  | —                | [vitor59422706@edu.df.senac.br](mailto:vitor59422706@edu.df.senac.br) |
