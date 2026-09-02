@@ -62,8 +62,6 @@ O processo deve apresentar mensagens claras de sucesso ou erro, além de conside
 
 ## Atores do Sistema
 
-## Atores do Sistema
-
 ### 1. USUÁRIO NÃO CADASTRADO (Ator Principal)
 
 - **Papel:** Realizar o cadastro de uma nova conta na rede social.
