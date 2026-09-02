@@ -84,15 +84,3 @@ O processo deve apresentar mensagens claras de sucesso ou erro, além de conside
 | **Sistema** | Automático | Validar e processar o cadastro | ✅ | ✅ | ✅ | ✅ |
 
 ---
-
-## 🎯 CRITÉRIOS DE ACEITE PARA 10/10
-
-- ✅ Descrição detalhada do requisito;
-- ✅ Objetivo do negócio apresentado com 3 ou mais benefícios;
-- ✅ Contexto do negócio claramente definido;
-- ✅ Mínimo de 3 atores identificados;
-- ✅ Papel de cada ator claramente descrito;
-- ✅ Responsabilidades de cada ator definidas;
-- ✅ Permissões CRUD mapeadas;
-- ✅ Processo de cadastro relacionado à tela de login;
-- ✅ Requisitos de acessibilidade considerados para o público da plataforma.
