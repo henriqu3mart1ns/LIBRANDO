@@ -324,95 +324,17 @@ O sistema não consegue acessar o servidor ou o banco de dados durante o process
 | **RN-11** | Acesso à Plataforma | Após o cadastro realizado com sucesso, o usuário deve poder utilizar suas credenciais para acessar a plataforma |
 | **RN-12** | Integridade dos Dados | O sistema deve impedir que informações inválidas sejam armazenadas como dados válidos de uma conta |
 
-# ⚙️ Requisitos Não Funcionais
+### ⚙️ Requisitos Não-Funcionais (RNF)
 
-## RNF-001 — 🔐 Segurança da Senha
-
-As senhas devem ser armazenadas utilizando mecanismos de hash seguro, não sendo permitido seu armazenamento em texto puro.
-
-**Categoria:** 🔒 Segurança
-
----
-
-## RNF-002 — 🌐 Comunicação Segura
-
-A comunicação entre o cliente e o servidor deve utilizar HTTPS para proteger os dados transmitidos.
-
-**Categoria:** 🔒 Segurança
-
----
-
-## RNF-003 — ⚡ Desempenho
-
-Em condições normais de funcionamento, o sistema deve apresentar resposta ao processo de cadastro em até aproximadamente 2 segundos, desconsiderando problemas externos de rede ou infraestrutura.
-
-**Categoria:** ⚡ Desempenho
-
----
-
-## RNF-004 — 👁️ Mensagens Visuais
-
-As mensagens de sucesso, erro e validação devem ser apresentadas de forma visual e clara.
-
-**Categoria:** ♿ Acessibilidade
-
----
-
-## RNF-005 — 🤟 Suporte à Libras
-
-Quando aplicável, as orientações importantes do processo devem possuir suporte visual compatível com Libras.
-
-**Categoria:** ♿ Acessibilidade
-
----
-
-## RNF-006 — ⌨️ Navegação por Teclado
-
-Os elementos da tela de cadastro devem permitir navegação e interação por teclado.
-
-**Categoria:** ♿ Acessibilidade
-
----
-
-## RNF-007 — 🏷️ Identificação dos Campos
-
-Os campos do formulário devem possuir identificação clara e persistente para facilitar seu preenchimento.
-
-**Categoria:** 🖥️ Usabilidade
-
----
-
-## RNF-008 — 💬 Feedback Visual
-
-O sistema deve apresentar feedback visual durante ações relevantes, como:
-
-- 🔎 Validação dos campos;
-- ❌ Erros de preenchimento;
-- ✅ Cadastro realizado;
-- ⏳ Processamento da solicitação;
-- ⚠️ Falhas de comunicação.
-
-**Categoria:** 🖥️ Usabilidade
-
----
-
-## RNF-009 — 📱 Responsividade
-
-A tela de cadastro deve adaptar-se adequadamente a diferentes tamanhos de tela, incluindo:
-
-- 🖥️ Computadores;
-- 💻 Notebooks;
-- 📱 Tablets;
-- 📱 Smartphones.
-
-**Categoria:** 📱 Responsividade
-
----
-
-## RNF-010 — 👁️ Contraste
-
-Os textos, campos, botões e demais elementos importantes da interface devem possuir contraste visual adequado para facilitar sua identificação e leitura.
-
-**Categoria:** ♿ Acessibilidade
-
----
+| ID | Atributo | Requisito | Métrica | Justificativa |
+|:---:|:---|:---|:---|:---|
+| **RNF-01** | Segurança | Senhas devem ser armazenadas utilizando hash seguro, não sendo permitida sua gravação em texto puro | Senhas armazenadas sem texto puro | 🔐 Proteger as credenciais dos usuários |
+| **RNF-02** | Segurança | A comunicação entre cliente e servidor deve utilizar HTTPS | Comunicação realizada via HTTPS | 🛡️ Proteger os dados transmitidos |
+| **RNF-03** | Performance | O processo de cadastro deve apresentar resposta em até aproximadamente 2 segundos em condições normais | Tempo de resposta ≤ 2 segundos | ⚡ Evitar que o usuário fique esperando |
+| **RNF-04** | Acessibilidade | Mensagens de sucesso, erro e validação devem ser apresentadas visualmente | Mensagens visuais disponíveis | ♿ Garantir que informações importantes não dependam exclusivamente de áudio |
+| **RNF-05** | Acessibilidade | Orientações importantes devem possuir suporte visual compatível com Libras, quando aplicável | Recursos visuais disponíveis quando necessários | 🤟 Facilitar o acesso de pessoas surdas às informações |
+| **RNF-06** | Acessibilidade | Os elementos da tela de cadastro devem permitir navegação e interação por teclado | Elementos acessíveis via teclado | ⌨️ Facilitar a utilização por diferentes usuários |
+| **RNF-07** | Usabilidade | Os campos do formulário devem possuir identificação clara e persistente | Campos identificados corretamente | 🏷️ Facilitar a compreensão e o preenchimento do formulário |
+| **RNF-08** | Usabilidade | O sistema deve apresentar feedback visual durante validações, erros, processamento e conclusão do cadastro | Feedback visual nas principais ações | 💬 Informar ao usuário o estado da operação |
+| **RNF-09** | Responsividade | A tela de cadastro deve adaptar-se a computadores, notebooks, tablets e smartphones | Interface adaptável a diferentes resoluções | 📱 Garantir uma boa experiência em diferentes dispositivos |
+| **RNF-10** | Acessibilidade | Textos, campos, botões e elementos importantes devem possuir contraste visual adequado | Contraste adequado entre elementos | 👁️ Facilitar a leitura e identificação dos elementos da interface |
