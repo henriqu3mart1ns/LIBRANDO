@@ -9,8 +9,7 @@
 |  3  | Gabriel Souza / Vitor Silva | Desenvolvedor Back-End  | —                | [[gabriel49414966@edu.df.senac.br](mailto:gabriel49414966@edu.df.senac.br) / [vitor59422706@edu.df.senac.br](mailto:vitor59422706@edu.df.senac.br)] |
 |  4  | Henrique Alves              | DBA / Banco de Dados    | —                | [[henrique51782196@edu.df.senac.br](mailto:henrique51782196@edu.df.senac.br)]                                                                       |
 |  5  | Angel Pacheco               | QA / SecDevOps          | Fullstack (opcional)                | [[angel59381406@edu.df.senac.br](mailto:angel59381406@edu.df.senac.br)]                                                                             |
-|  6  | Angel Pacheco               | Fullstack (opcional)    | —                | [[angel59381406@edu.df.senac.br](mailto:angel59381406@edu.df.senac.br)]                                                                             |
-
+                                                                           |
 ## 1.2 Identificação
 
 * **NOME_DO_PROJETO:** Librando
