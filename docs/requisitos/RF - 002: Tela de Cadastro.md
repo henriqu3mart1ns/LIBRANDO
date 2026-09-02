@@ -307,79 +307,22 @@ O sistema não consegue acessar o servidor ou o banco de dados durante o process
 
 ---
 
-# 📏 Regras de Negócio
+### 📋 Regras de Negócio (RN)
 
-## RN-001 — 📧 E-mail Único
-
-O sistema não deve permitir o cadastro de duas contas utilizando o mesmo e-mail.
-
----
-
-## RN-002 — 📋 Campos Obrigatórios
-
-Todos os campos definidos como obrigatórios devem ser preenchidos antes da conclusão do cadastro.
-
----
-
-## RN-003 — ✉️ E-mail Válido
-
-O sistema deve verificar se o e-mail informado possui um formato válido antes de permitir a criação da conta.
-
----
-
-## RN-004 — 🔑 Senha Obrigatória
-
-O usuário deve informar uma senha para concluir o cadastro.
-
----
-
-## RN-005 — 🔄 Confirmação de Senha
-
-Quando houver um campo de confirmação de senha, o sistema deve verificar se a senha e sua confirmação são iguais.
-
----
-
-## RN-006 — 🔐 Segurança da Senha
-
-A senha do usuário não deve ser armazenada em texto puro. O sistema deve utilizar um mecanismo de hash seguro para seu armazenamento.
-
----
-
-## RN-007 — 🔎 Validação dos Dados
-
-Os dados fornecidos pelo usuário devem ser validados antes da criação da conta.
-
----
-
-## RN-008 — ✅ Cadastro Somente Após Validação
-
-A conta somente deve ser criada quando todas as validações obrigatórias forem concluídas com sucesso.
-
----
-
-## RN-009 — 💬 Feedback do Cadastro
-
-O sistema deve informar visualmente ao usuário se o cadastro foi realizado com sucesso ou se ocorreu algum erro.
-
----
-
-## RN-010 — ♿ Acessibilidade
-
-As informações essenciais do processo de cadastro não devem depender exclusivamente de áudio para serem compreendidas.
-
----
-
-## RN-011 — 🔓 Acesso à Plataforma
-
-Após a conclusão bem-sucedida do cadastro, o usuário deve poder utilizar as credenciais cadastradas para acessar a plataforma.
-
----
-
-## RN-012 — 🛡️ Integridade dos Dados
-
-O sistema deve impedir que informações inválidas sejam armazenadas como dados válidos de uma conta.
-
----
+| ID | Regra | Descrição |
+|:---:|:---|:---|
+| **RN-01** | E-mail Único | O e-mail deve ser único no sistema; não permitir o cadastro de contas duplicadas |
+| **RN-02** | Campos Obrigatórios | Todos os campos definidos como obrigatórios devem ser preenchidos antes da conclusão do cadastro |
+| **RN-03** | E-mail Válido | O e-mail informado deve possuir um formato válido |
+| **RN-04** | Senha Obrigatória | O usuário deve informar uma senha para concluir o cadastro |
+| **RN-05** | Confirmação de Senha | A senha e sua confirmação devem ser iguais para permitir a criação da conta |
+| **RN-06** | Segurança da Senha | A senha não deve ser armazenada em texto puro; deve ser protegida utilizando hash seguro |
+| **RN-07** | Validação dos Dados | Todos os dados fornecidos devem ser validados antes da criação da conta |
+| **RN-08** | Cadastro Após Validação | A conta somente deve ser criada quando todas as validações obrigatórias forem concluídas com sucesso |
+| **RN-09** | Feedback do Cadastro | O sistema deve informar visualmente ao usuário se o cadastro foi realizado com sucesso ou se ocorreu algum erro |
+| **RN-10** | Acessibilidade | As informações essenciais do cadastro não devem depender exclusivamente de áudio para serem compreendidas |
+| **RN-11** | Acesso à Plataforma | Após o cadastro realizado com sucesso, o usuário deve poder utilizar suas credenciais para acessar a plataforma |
+| **RN-12** | Integridade dos Dados | O sistema deve impedir que informações inválidas sejam armazenadas como dados válidos de uma conta |
 
 # ⚙️ Requisitos Não Funcionais
 
