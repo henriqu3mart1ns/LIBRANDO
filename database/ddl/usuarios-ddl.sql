@@ -27,12 +27,15 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `senha` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE usuarios (
+    id INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    data_nascimento DATE NOT NULL,
+    nome_usuario VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
@@ -41,9 +44,9 @@ CREATE TABLE `usuarios` (
 --
 -- Índices de tabela `usuarios`
 --
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+ALTER TABLE usuarios
+ADD COLUMN data_nascimento DATE NULL,
+ADD COLUMN nome_usuario VARCHAR(50) NULL;
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -59,3 +62,9 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+UPDATE usuarios
+SET
+    data_nascimento = '2000-01-01',
+    nome_usuario = 'dannyboy'
+WHERE id = 1;
