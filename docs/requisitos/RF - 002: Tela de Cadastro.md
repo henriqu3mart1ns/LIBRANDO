@@ -472,7 +472,7 @@ O fluxo funciona da seguinte maneira:
 ┌─────────────────────────┐
 │      BANCO DE DADOS     │
 │         MySQL           │
-│        usuarios         │
+│     Tabela `usuarios`   │
 └─────────────────────────┘
 ```
 
