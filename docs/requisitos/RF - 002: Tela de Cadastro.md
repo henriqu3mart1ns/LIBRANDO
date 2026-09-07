@@ -454,39 +454,26 @@ O fluxo funciona da seguinte maneira:
 
 ### Diagrama de Componentes
 ```text
-┌──────────────────────────────────────────────┐
-│             Frontend — Librando              │
-│       HTML5 + CSS3 + JavaScript              │
-│                                              │
-│  • index.html (Tela de Login)                │      
-│  • Interface acessível                       |
-|  • Hospedado em GitHub Pages                 │      
-└──────────────────────┬───────────────────────┘
-                       │
-                       │ HTTPS + HTTP
-                       ▼
-┌──────────────────────────────────────────────┐
-│             Backend — PHP                    │
-│                                              │
-│  • login.php (Autenticação)                  │       
-│  • conexao.php (Conexão com Banco)           │
-│  • Validação dos dados                       │                 
-│  • password_hash() / password_verify()       |
-|   • Hospedado em Render                      │
-└──────────────────────┬───────────────────────┘
-                       │
-                       │ PDO / SQL
-                       ▼
-┌──────────────────────────────────────────────┐
-│              Banco de Dados                  │
-│                  SQLite                      │
-│                                              │
-│  • Tabela: usuarios                          │
-│  • ID do usuário                             │                                                                         
-│  • Senha (hash)                              │
-│  • Dados de cadastro                         │
-│  • Restrições e validações                   │
-└──────────────────────────────────────────────┘
+┌─────────────────────────┐
+│       FRONTEND          │
+│ Vue.js 3 + Vite         │
+│ Vue Router + Axios      │
+└────────────┬────────────┘
+             │ HTTP/JSON
+             ▼
+┌─────────────────────────┐
+│        BACKEND          │
+│ PHP + Laravel 12        │
+│ AuthController          │
+│ Sanctum                 │
+└────────────┬────────────┘
+             │ Eloquent ORM
+             ▼
+┌─────────────────────────┐
+│      BANCO DE DADOS     │
+│         MySQL           │
+│        usuarios         │
+└─────────────────────────┘
 ```
 
 ADR-001 — Escolha do banco de dados
