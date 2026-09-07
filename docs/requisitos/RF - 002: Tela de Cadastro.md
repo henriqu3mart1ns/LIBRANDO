@@ -338,3 +338,296 @@ O sistema não consegue acessar o servidor ou o banco de dados durante o process
 | **RNF-08** | Usabilidade | O sistema deve apresentar feedback visual durante validações, erros, processamento e conclusão do cadastro | Feedback visual nas principais ações | 💬 Informar ao usuário o estado da operação |
 | **RNF-09** | Responsividade | A tela de cadastro deve adaptar-se a computadores, notebooks, tablets e smartphones | Interface adaptável a diferentes resoluções | 📱 Garantir uma boa experiência em diferentes dispositivos |
 | **RNF-10** | Acessibilidade | Textos, campos, botões e elementos importantes devem possuir contraste visual adequado | Contraste adequado entre elementos | 👁️ Facilitar a leitura e identificação dos elementos da interface |
+## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + PHP + MySQL + RENDER)
+**Mockup - Tela 1: Formulário Vazio (Estado Inicial)**
+```
+┌────────────────────────────────────────────────────────┐
+│                      LIBRANDO                          │
+├────────────────────────────────────────────────────────┤
+│                                                        │
+│  📝 Crie sua conta                                     │
+│                                                        │
+│  Nome:             [______________________________]    │
+│  E-mail:           [______________________________]    │
+│  Senha:            [______________________________]    │
+│  Confirmar Senha:  [______________________________]    │
+│                                                        │
+│  [ CADASTRAR ]                   Já tem conta? Login   │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+```
+
+**Tela 2: Formulário Preenchido (Validação Visual)**
+```
+┌────────────────────────────────────────────────────────┐
+│                       LIBRANDO                         │
+├────────────────────────────────────────────────────────┤
+│                                                        │
+│  📝 Crie sua conta                                     │
+│                                                        │
+│  Nome:             [ João da Silva              ] ✅   │
+│  E-mail:           [ usuario@email.com          ] ✅   │
+│  Senha:            [ ••••••••••••               ] ✅   │
+│  Confirmar Senha:  [ ••••••••••••               ] ✅   │
+│                                                        │
+│  [ CADASTRAR ]                   Já tem conta? Login   │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+```
+
+**Tela 3: Carregando (Processando)**
+```
+┌────────────────────────────────────────────────────────┐
+│                      LIBRANDO                          │
+├────────────────────────────────────────────────────────┤
+│                                                        │
+│  📝 Crie sua conta                                     │
+│                                                        │
+│             Processando cadastro...                    │
+│                  ⟳ (spinner)                           │
+│                                                        │
+│  [ CADASTRANDO... (Desabilitado) ]                     │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+```
+
+**Tela 4: Erro de Validação (Senha Inválida / Não Coincide)**
+```
+┌────────────────────────────────────────────────────────┐
+│                       LIBRANDO                         │
+├────────────────────────────────────────────────────────┤
+│                                                        │
+│  ⚠️ As senhas não coincidem!                           │
+│                                                        │
+│  Nome:             [ João da Silva              ] ✅   │
+│  E-mail:           [ joao.silva@email.com       ] ✅   │
+│  Senha:            [ ••••••••••••               ] ❌   │
+│  Confirmar Senha:  [ •••••••••                  ] ❌   │
+│                                                        │
+│  [ CADASTRAR ]                   Já tem conta? Login   │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+```
+
+
+**Tela 5: Sucesso (Confirmação)**
+```
+┌────────────────────────────────────────────────────────┐
+│                      LIBRANDO                          │
+├────────────────────────────────────────────────────────┤
+│                                                        │
+│  ✅ Usuário cadastrado com sucesso!                    │
+│  Redirecionando para a tela de login...                │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+```
+
+
+**Descrição de Estados:**
+- **Estado Normal:** Todos campos em branco, botões habilitados
+- **Estado Preenchido:** Validação visual com checkmark verde
+- **Estado Erro:** Campo inválido destacado em vermelho com mensagem
+- **Estado Carregando:** Mensagem de Processamento da Cadastro 
+- **Estado Sucesso:** Mensagem de confirmação com dados salvos
+
+**Fluxo de Navegação:**
+O fluxo funciona da seguinte maneira:
+
+1. O usuário acessa a Tela de Cadastro.  
+2. Informa seu nome, e-mail, senha e confirmação de senha.  
+3. Seleciona CADASTRAR.  
+4. O sistema valida se as senhas coincidem localmente; caso divirjam, o usuário permanece na tela e recebe uma mensagem de erro.  
+5. Se a validação local for bem-sucedida, o frontend envia os dados para o back-end Laravel.  
+6. O back-end valida os campos e verifica a unicidade do e-mail no banco de dados.  
+7. Se os dados forem inválidos ou o e-mail já estiver cadastrado, o usuário permanece na tela de cadastro e recebe uma mensagem de erro.  
+8. Se os dados forem válidos, o back-end aplica o hash na senha, insere o novo usuário no banco de dados e retorna a confirmação de sucesso.  
+9. O sistema exibe o alerta de sucesso e redireciona o usuário para a Tela de Login.
+10. Caso selecione Faça Login, o usuário é direcionado imediatamente para a tela de login sem submeter o formulário.
+
+**Responsividade:**
+- **Mobile (até 980px):** Layout single-column, campos full-width
+- **Tablet (até 980px):** Layout single-column com padding maior
+- **Desktop (980px+):** Layout potencialmente two-column se apropriado
+
+## 🏗️ 5. ARQUITETURA E ADR
+#### Exemplo Prático — RF-001: Arquitetura Completa
+
+### Diagrama de Componentes
+```text
+┌──────────────────────────────────────────────┐
+│             Frontend — Librando              │
+│       HTML5 + CSS3 + JavaScript              │
+│                                              │
+│  • index.html (Tela de Login)                │      
+│  • Interface acessível                       |
+|  • Hospedado em GitHub Pages                 │      
+└──────────────────────┬───────────────────────┘
+                       │
+                       │ HTTPS + HTTP
+                       ▼
+┌──────────────────────────────────────────────┐
+│             Backend — PHP                    │
+│                                              │
+│  • login.php (Autenticação)                  │       
+│  • conexao.php (Conexão com Banco)           │
+│  • Validação dos dados                       │                 
+│  • password_hash() / password_verify()       |
+|   • Hospedado em Render                      │
+└──────────────────────┬───────────────────────┘
+                       │
+                       │ PDO / SQL
+                       ▼
+┌──────────────────────────────────────────────┐
+│              Banco de Dados                  │
+│                  SQLite                      │
+│                                              │
+│  • Tabela: usuarios                          │
+│  • ID do usuário                             │                                                                         
+│  • Senha (hash)                              │
+│  • Dados de cadastro                         │
+│  • Restrições e validações                   │
+└──────────────────────────────────────────────┘
+```
+
+ADR-001 — Escolha do banco de dados
+
+Status: Aceito
+
+Contexto:
+A aplicação necessita armazenar dados estruturados de usuários com garantia de integridade relacional, suporte transacional ACID e unicidade de e-mail.
+
+Decisão:
+Adotar o MySQL gerenciado por meio de migrations nativas do Laravel
+
+Motivo:
+O projeto exige um sistema de gerenciamento de banco de dados confiável, com alto desempenho para operações de leitura e escrita simples, além de ampla compatibilidade com o ecossistema PHP/Laravel. O MySQL foi escolhido por ser o padrão de mercado para aplicações Web relacionais, oferecendo excelente suporte a restrições de unicidade (como e-mails únicos) e suporte nativo completo pelo Eloquent ORM sem a necessidade de drivers adicionais complexos.
+
+Consequências:
++ Integração simples e eficiente com o Eloquent ORM.
++ Aplicação de integridade de dados e índice único diretamente na tabela de usuarios ($table->string('email')->unique()).  
+- Exige um servidor de banco de dados relacional MySQL configurado no ambiente.
+
+ADR-002: Escolha do Back-end
+
+Status: Aceito
+
+Contexto:
+Necessidade de construir uma API RESTful para cadastro e autenticação de usuários, capaz de aplicar validação server-side rígida e hashing seguro de senhas.
+
+Decisão:
+Adotar o Laravel 12 (PHP 8.2+) utilizando controladores de API.
+
+Motivo:
+O Laravel 12 foi escolhido por ser um framework maduro que simplifica a criação de APIs RESTful estruturadas. Ele oferece ferramentas nativas para validação robusta de dados no servidor (`Validator::make`), integração transparente com ORM (Eloquent) e recursos de criptografia segura (`Hash::make`) sem a necessidade de dependências de terceiros, garantindo alta produtividade, manutenibilidade e segurança[cite: 2].
+* **Decisão:** Adotar o **Laravel 12 (PHP 8.2+)** utilizando controladores de API .
+
+Consequências:
++ Validação declarativa com o uso de `Validator::make()`[cite: 2].
++ Criptografia segura nativa com `Hash::make()` para o armazenamento de senhas[cite: 2].
++ Requer ambiente PHP configurado na máquina/servidor.
+
+### Tecnologias Escolhidas
+
+| Camada | Tecnologia | Versão | Justificativa |
+|--------|-----------|--------|---------------|
+| Frontend | Vue.js 3 | 3.x | 3.x	Construção da interface reativa e gerenciamento dos estados do formulário |
+| Roteamento | Vue Router | 4.x | Navegação entre as telas da SPA (ex: cadastro e login) sem recarregar a página |
+| Cliente HTTP | Axios | 1.x | Realização de requisições assíncronas (POST) para a API backend |
+| Build Tool | Vite | 5.x | Ferramenta de build rápida e servidor de desenvolvimento para o frontend Vue |
+| Backend | Laravel | 12.x | Framework PHP para a criação da API RESTful, gerenciamento de rotas e validações |
+| Linguagem Backend | PHP | 8.2+ | Linguagem base para execução do framework Laravel e processamento da API |
+| ORM / Conexão BD | Eloquent ORM (PDO) | Laravel 12 | Abstração do banco de dados e prevenção nativa contra SQL Injection via Prepared Statements |
+| Banco de Dados | MySQL | 8.x | Armazenamento relacional dos usuários, garantindo integridade e e-mails únicos |
+| Hash / Segurança | Bcrypt (Hash::make)| PHP / Laravel | Criptografia irreversível e segura para o armazenamento das senhas no banco |
+
+## 🔒 6. VALIDAÇÃO DE SEGURANÇA OWASP
+
+VALIDAÇÂO DE SEGURANÇA OWASP
+
+Foram analisadas as principais vulnerabilidades aplicáveis ao sistema, tomando como referência as recomendações da OWASP.
+
+- SQL Injection: Utilização do Eloquent ORM com consultas preparadas (*Prepared Statements* via PDO) na persistência de dados.
+- Armazenamento de senhas: Utilização de `Hash::make()` (Bcrypt) para criptografia irreversível das senhas antes do salvamento no banco.
+- XSS (Cross-Site Scripting): Tratamento e interpolação segura de dados exibidos pelo Vue.js, além de validação e sanitização das entradas no back-end.
+- Autenticação: Validação rígida de credenciais e campos obrigatórios realizada no back-end pelo `Validator` do Laravel.
+- Controle de acesso: Validação de permissões e rotas de API no servidor antes de disponibilizar ou alterar recursos protegidos.
+- Gerenciamento de sessão: Utilização de mecanismos seguros de autenticação gerenciados pelo back-end Laravel.
+- Validação de entrada: Todos os dados recebidos do usuário (nome, e-mail, senha) são validados no back-end com regras declarativas de formato e unicidade.
+
+## 📚 7. DOCUMENTAÇÃO API (SWAGGER/OPENAPI)
+
+**Objetivo:** Documentar endpoints REST da API usando Swagger/OpenAPI.
+
+#### Exemplo Prático — RF-002: Documentação Swagger
+
+**Arquivo:** `docs/api/swagger.json`
+
+```json
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sistema Web API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/cadastrar": {
+      "post": {
+        "summary": "Realizar cadastro",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["nome", "email", "senha"],
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "João da Silva"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "joao.silva@email.com"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "example": "123456"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário cadastrado com sucesso"
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "422": {
+            "description": "E-mail já cadastrado ou validação falhou"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Para visualizar a documentação:**
+O arquivo `swagger.json` pode ser aberto em uma ferramenta compatível com **Swagger UI**, permitindo visualizar os endpoints, parâmetros, respostas e códigos HTTP da API.
+
+**Endpoints documentados:**
+
+* `POST /api/cadastrar` — Realizar Cadastro de novo usuário.
+
+**Autenticação:**
+
+* O usuário envia nome, e-mail e senha.
+* O backend Laravel valida a unicidade do e-mail no banco de dados.
+* A senha é criptografada de forma segura utilizando Hash::make() (Bcrypt).
+* Em caso de sucesso, o registro do usuário é criado com o retorno do status HTTP 201.
