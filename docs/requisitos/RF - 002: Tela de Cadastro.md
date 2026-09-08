@@ -1,5 +1,190 @@
 # 📝 RF-002 — Tela de Cadastro de Usuários
 
+# 1. METADADOS DO PROJETO E DA EQUIPE
+
+## 1.1 Composição da Equipe
+
+|  ID | Nome Completo                 | Papel Primário          | Papel Secundário | E-mail / Contato                                                                                                                                    |
+| :-: | :---------------------------- | :---------------------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1  | [André Mendes]                | Scrum Master            | Fullstack        | [[andre53774636@edu.df.senac.br](mailto:andre53774636@edu.df.senac.br)]                                                                             |
+|  2  | [Eduardo Amorim]                     | Desenvolvedor Front-End | —                | [[eduardo59381426@edu.df.senac.br](mailto:eduardo59381426@edu.df.senac.br)]                                                                         |
+|  3  | [Gabriel Souza / Vitor Silva] | Desenvolvedor Back-End  | —                | [[gabriel49414966@edu.df.senac.br](mailto:gabriel49414966@edu.df.senac.br) / [vitor59422706@edu.df.senac.br](mailto:vitor59422706@edu.df.senac.br)] |
+|  4  | [Henrique Alves]              | DBA / Banco de Dados    | —                | [[henrique51782196@edu.df.senac.br](mailto:henrique51782196@edu.df.senac.br)]                                                                       |
+|  5  | [Angel Pacheco]               | QA / SecDevOps          | —                | [[angel59381406@edu.df.senac.br](mailto:angel59381406@edu.df.senac.br)]                                                                             |
+|  6  | [Angel Pacheco]               | Fullstack (opcional)    | —                | [[angel59381406@edu.df.senac.br](mailto:angel59381406@edu.df.senac.br)]                                                                             |
+
+## 1.2 Identificação
+
+* **NOME_DO_PROJETO:** Librando
+
+* **DESCRICAO_BREVE:**
+  Sistema web desenvolvido para a plataforma Librando, uma rede social voltada à comunidade surda. Nesta etapa do projeto, foi desenvolvida a tela de login com autenticação de usuários utilizando HTML, CSS, PHP e MySQL.
+
+## 1.3 Localização dos Artefatos
+
+* **LINK_REPOSITORIO_GITHUB:** `(https://github.com/angeldanylo35-ux/librando00/)`
+* **BRANCH_PRINCIPAL:** `main`
+* **LINK_APLICACAO_DEPLOY:** Aplicação executada localmente por meio do XAMPP.
+* **LINK_BANCO_DADOS:** Banco de dados MySQL local.
+* **LINK_API_SWAGGER:** Não se aplica nesta etapa do projeto.
+* **LINK_DEMONSTRAÇÃO:** Aplicação executada localmente em `(https://librando.onrender.com)`
+
+---
+
+# 2. ESTRUTURA DE DIRETÓRIOS DO PROJETO
+
+O projeto foi migrado para uma arquitetura separada entre **Back-end Laravel** e **Front-end Vue.js**, mantendo a organização dos arquivos de acordo com as convenções do framework Laravel.
+
+```text
+librando/
+│
+├── .claude/
+│   ├── agents/
+│   ├── settings/
+│   └── system-prompts/
+│
+├── docs/
+│   └── requisitos/
+│       └── RF-001-login.md
+|       └── RF-002-cadastrar.md
+│
+├── backend/                         # API / Back-end Laravel
+│   ├── app/
+│   │   ├── Http/
+│   │   │   └── Controllers/
+│   │   │       ├── Controller.php
+│   │   │       └── api/
+│   │   │           └── AuthController.php
+│   │   │
+│   │   ├── Models/
+│   │   │   ├── User.php
+│   │   │   └── Usuario.php
+│   │   │
+│   │   └── Providers/
+│   │       └── AppServiceProvider.php
+│   │
+│   ├── bootstrap/
+│   │   ├── app.php
+│   │   ├── cache/
+│   │   └── providers.php
+│   │
+│   ├── config/
+│   │   ├── app.php
+│   │   ├── auth.php
+│   │   ├── database.php
+│   │   ├── cors.php
+│   │   ├── sanctum.php
+│   │   ├── session.php
+│   │   └── ...
+│   │
+│   ├── database/
+│   │   ├── factories/
+│   │   │   └── UserFactory.php
+│   │   ├── migrations/
+│   │   │   ├── 0001_01_01_000000_create_users_table.php
+│   │   │   ├── 2026_09_06_021505_create_usuarios_table.php
+│   │   │   └── ...
+│   │   └── seeders/
+│   │       ├── DatabaseSeeder.php
+│   │       └── UsuarioSeeder.php
+│   │
+│   ├── public/
+│   │   ├── index.php
+│   │   ├── .htaccess
+│   │   └── ...
+│   │
+│   ├── resources/
+│   │   ├── css/
+│   │   │   └── app.css
+│   │   ├── js/
+│   │   │   └── app.js
+│   │   └── views/
+│   │       └── welcome.blade.php
+│   │
+│   ├── routes/
+│   │   ├── api.php
+│   │   ├── web.php
+│   │   └── console.php
+│   │
+│   ├── storage/
+│   │   ├── app/
+│   │   ├── framework/
+│   │   └── logs/
+│   │
+│   ├── tests/
+│   │   ├── Feature/
+│   │   ├── Unit/
+│   │   └── TestCase.php
+│   │
+│   ├── artisan
+│   ├── composer.json
+│   ├── composer.lock
+│   ├── .env.example
+│   ├── phpunit.xml
+│   └── vite.config.js
+│
+├── frontend/                        # Interface / Front-end Vue.js
+│   ├── public/
+│   │   ├── favicon.svg
+│   │   └── icons.svg
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── estetico.css
+│   │   │   └── ...
+│   │   │
+│   │   ├── components/
+│   │   │   └── HelloWorld.vue
+│   │   │
+│   │   ├── paginas/
+│   │   │   ├── cadastro.vue
+│   │   │   └── login.vue
+│   │   │
+│   │   ├── router/
+│   │   │   └── index.js
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.vue
+│   │   ├── main.js
+│   │   └── style.css
+│   │
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
+│
+├── README.md
+│
+└── .gitignore
+```
+
+## Localização dos Arquivos
+
+* **Documentação:** `docs/requisitos/RF-002-cadastrar.md`
+* **Back-end Laravel:** `backend/`
+* **Controllers da API:** `backend/app/Http/Controllers/api/`
+* **Autenticação:** `backend/app/Http/Controllers/api/AuthController.php`
+* **Models:** `backend/app/Models/`
+* **Migrations:** `backend/database/migrations/`
+* **Seeders:** `backend/database/seeders/`
+* **Rotas da API:** `backend/routes/api.php`
+* **Rotas web:** `backend/routes/web.php`
+* **Configurações do Laravel:** `backend/config/`
+* **Testes automatizados:** `backend/tests/`
+* **Ponto de entrada público do Laravel:** `backend/public/index.php`
+* **Interface Vue.js:** `frontend/`
+* **Páginas do front-end:** `frontend/src/paginas/`
+* **Componentes Vue:** `frontend/src/components/`
+* **Configuração das rotas Vue:** `frontend/src/router/`
+* **Comunicação com a API:** `frontend/src/services/api.js`
+* **Estilos:** `frontend/src/assets/` e `frontend/src/style.css`
+* **Guia geral:** `README.md`
+
+---
+
+
 ## 🔎 1. Identificação do Requisito
 
 | 📌 Campo | 📄 Informação |
