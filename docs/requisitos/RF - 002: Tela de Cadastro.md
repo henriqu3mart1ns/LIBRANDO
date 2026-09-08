@@ -526,20 +526,48 @@ O sistema não consegue acessar o servidor ou o banco de dados durante o process
 ## 🎨 4. PROTÓTIPO FUNCIONAL (HTML + CSS + PHP + MySQL + RENDER)
 **Mockup - Tela 1: Formulário Vazio (Estado Inicial)**
 ```
-┌────────────────────────────────────────────────────────┐
-│                      LIBRANDO                          │
-├────────────────────────────────────────────────────────┤
-│                                                        │
-│  📝 Crie sua conta                                     │
-│                                                        │
-│  Nome:             [______________________________]    │
-│  E-mail:           [______________________________]    │
-│  Senha:            [______________________________]    │
-│  Confirmar Senha:  [______________________________]    │
-│                                                        │
-│  [ CADASTRAR ]                   Já tem conta? Login   │
-│                                                        │
-└────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│  🤟 Librando                                                │
+│                                                             │
+│  Faça parte da                                               │
+│  comunidade                                                  │
+│  Librando.                                                   │
+│                                                             │
+│  Crie sua conta e comece a contribuir com conteúdo em       │
+│  Libras e aprendizado compartilhado.                        │
+│                                                             │
+│                         ┌──────────────────────────────┐     │
+│                         │ Criar conta                  │     │
+│                         │ Preencha os dados abaixo...  │     │
+│                         │                              │     │
+│                         │ Nome completo                │     │
+│                         │ [ Digite seu nome         ]  │     │
+│                         │                              │     │
+│                         │ E-mail                       │     │
+│                         │ [ Digite seu e-mail       ]  │     │
+│                         │                              │     │
+│                         │ Nome de usuário              │     │
+│                         │ [ Escolha um nome...      ]  │     │
+│                         │                              │     │
+│                         │ Data de nascimento           │     │
+│                         │ [ __/__/____              ]  │     │
+│                         │                              │     │
+│                         │ Senha                        │     │
+│                         │ [ Crie uma senha          ]  │     │
+│                         │ A senha precisa ter ao       │     │
+│                         │ menos 6 caracteres.          │     │
+│                         │                              │     │
+│                         │ Confirmar senha              │     │
+│                         │ [ Repita a senha          ]  │     │
+│                         │ [ ] Mostrar                  │     │
+│                         │                              │     │
+│                         │ [       Cadastrar        ]  │     │
+│                         │                              │     │
+│                         │ Já possui uma conta? Entrar  │     │
+│                         └──────────────────────────────┘     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘─┘
 ```
 
 **Tela 2: Formulário Preenchido (Validação Visual)**
