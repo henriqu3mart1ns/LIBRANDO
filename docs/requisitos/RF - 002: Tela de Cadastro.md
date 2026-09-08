@@ -528,111 +528,140 @@ O sistema não consegue acessar o servidor ou o banco de dados durante o process
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│  🤟 Librando                                                │
+│  🤟 Librando                                               │
 │                                                             │
-│  Faça parte da                                               │
-│  comunidade                                                  │
-│  Librando.                                                   │
+│  Faça parte da                                              │
+│  comunidade                                                 │
+│  Librando.                                                  │
 │                                                             │
 │  Crie sua conta e comece a contribuir com conteúdo em       │
 │  Libras e aprendizado compartilhado.                        │
 │                                                             │
-│                         ┌──────────────────────────────┐     │
-│                         │ Criar conta                  │     │
-│                         │ Preencha os dados abaixo...  │     │
-│                         │                              │     │
-│                         │ Nome completo                │     │
-│                         │ [ Digite seu nome         ]  │     │
-│                         │                              │     │
-│                         │ E-mail                       │     │
-│                         │ [ Digite seu e-mail       ]  │     │
-│                         │                              │     │
-│                         │ Nome de usuário              │     │
-│                         │ [ Escolha um nome...      ]  │     │
-│                         │                              │     │
-│                         │ Data de nascimento           │     │
-│                         │ [ __/__/____              ]  │     │
-│                         │                              │     │
-│                         │ Senha                        │     │
-│                         │ [ Crie uma senha          ]  │     │
-│                         │ A senha precisa ter ao       │     │
-│                         │ menos 6 caracteres.          │     │
-│                         │                              │     │
-│                         │ Confirmar senha              │     │
-│                         │ [ Repita a senha          ]  │     │
-│                         │ [ ] Mostrar                  │     │
-│                         │                              │     │
+│                         ┌──────────────────────────────┐    │
+│                         │ Criar conta                  │    │
+│                         │ Preencha os dados abaixo...  │    │
+│                         │                              │    │
+│                         │ Nome completo                │    │
+│                         │ [ Digite seu nome         ]  │    │
+│                         │                              │    │
+│                         │ E-mail                       │    │
+│                         │ [ Digite seu e-mail       ]  │    │
+│                         │                              │    │
+│                         │ Nome de usuário              │    │
+│                         │ [ Escolha um nome...      ]  │    │
+│                         │                              │    │
+│                         │ Data de nascimento           │    │
+│                         │ [ __/__/____              ]  │    │
+│                         │                              │    │
+│                         │ Senha                        │    │
+│                         │ [ Crie uma senha          ]  │    │
+│                         │ A senha precisa ter ao       │    │
+│                         │ menos 6 caracteres.          │    │
+│                         │                              │    │
+│                         │ Confirmar senha              │    │
+│                         │ [ Repita a senha          ]  │    │
+│                         │ [ ] Mostrar                  │    │
+│                         │                              │    │
 │                         │ [       Cadastrar        ]  │     │
-│                         │                              │     │
-│                         │ Já possui uma conta? Entrar  │     │
-│                         └──────────────────────────────┘     │
+│                         │                              │    │
+│                         │ Já possui uma conta? Entrar  │    │
+│                         └──────────────────────────────┘    │
 │                                                             │
-└─────────────────────────────────────────────────────────────┘─┘
+└─────────────────────────────────────────────────────────────┘
 ```
 
 **Tela 2: Formulário Preenchido (Validação Visual)**
-```
-┌────────────────────────────────────────────────────────┐
-│                       LIBRANDO                         │
-├────────────────────────────────────────────────────────┤
-│                                                        │
-│  📝 Crie sua conta                                     │
-│                                                        │
-│  Nome:             [ João da Silva              ] ✅   │
-│  E-mail:           [ usuario@email.com          ] ✅   │
-│  Senha:            [ ••••••••••••               ] ✅   │
-│  Confirmar Senha:  [ ••••••••••••               ] ✅   │
-│                                                        │
-│  [ CADASTRAR ]                   Já tem conta? Login   │
-│                                                        │
-└────────────────────────────────────────────────────────┘
-```
 
-**Tela 3: Carregando (Processando)**
 ```
-┌────────────────────────────────────────────────────────┐
-│                      LIBRANDO                          │
-├────────────────────────────────────────────────────────┤
-│                                                        │
-│  📝 Crie sua conta                                     │
-│                                                        │
-│             Processando cadastro...                    │
-│                  ⟳ (spinner)                           │
-│                                                        │
-│  [ CADASTRANDO... (Desabilitado) ]                     │
-│                                                        │
-└────────────────────────────────────────────────────────┘
-```
-
-**Tela 4: Erro de Validação (Senha Inválida / Não Coincide)**
-```
-┌────────────────────────────────────────────────────────┐
-│                       LIBRANDO                         │
-├────────────────────────────────────────────────────────┤
-│                                                        │
-│  ⚠️ As senhas não coincidem!                           │
-│                                                        │
-│  Nome:             [ João da Silva              ] ✅   │
-│  E-mail:           [ joao.silva@email.com       ] ✅   │
-│  Senha:            [ ••••••••••••               ] ❌   │
-│  Confirmar Senha:  [ •••••••••                  ] ❌   │
-│                                                        │
-│  [ CADASTRAR ]                   Já tem conta? Login   │
-│                                                        │
-└────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│  🤟 Librando                                               │
+│                                                             │
+│  Faça parte da                                              │
+│  comunidade                                                 │
+│  Librando.                                                  │
+│                                                             │
+│  Crie sua conta e comece a contribuir com conteúdo em       │
+│  Libras e aprendizado compartilhado.                        │
+│                                                             │
+│                         ┌──────────────────────────────┐    │
+│                         │ Criar conta                  │    │
+│                         │ Preencha os dados abaixo...  │    │
+│                         │                              │    │
+│                         │ Nome completo                │    │
+│                         │ [ João da Silva         ] ✅ │    │
+│                         │                              │    │
+│                         │ E-mail                       │    │
+│                         │ [ usuario@email.com     ] ✅ │    │
+│                         │                              │    │
+│                         │ Nome de usuário              │    │
+│                         │ [ cachorro_ovudo      ]   ✅ │    │
+│                         │                              │    │
+│                         │ Data de nascimento           │    │
+│                         │ [ 16__/11__/__2005__      ✅ │    │
+│                         │                              │    │
+│                         │ Senha                        │    │
+│                         │ [ ••••••••••••          ] ✅ │    │
+│                         │ A senha precisa ter ao       │    │
+│                         │ menos 6 caracteres.          │    │
+│                         │                              │    │
+│                         │ Confirmar senha              │    │
+│                         │ [ ••••••••••••          ] ✅ │    │
+│                         │ [ ] Mostrar                  │    │
+│                         │                              │    │
+│                         │ [       Cadastrar        ]   │    │
+│                         │                              │    │
+│                         │ Já possui uma conta? Entrar  │    │
+│                         └──────────────────────────────┘    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 
-**Tela 5: Sucesso (Confirmação)**
+**Tela 3: Erro de Validação (Senha Inválida / Não Coincide)**
 ```
-┌────────────────────────────────────────────────────────┐
-│                      LIBRANDO                          │
-├────────────────────────────────────────────────────────┤
-│                                                        │
-│  ✅ Usuário cadastrado com sucesso!                    │
-│  Redirecionando para a tela de login...                │
-│                                                        │
-└────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│  🤟 Librando                                               │
+│                                                             │
+│  Faça parte da                                              │
+│  comunidade                                                 │
+│  Librando.                                                  │
+│                                                             │
+│  Crie sua conta e comece a contribuir com conteúdo em       │
+│  Libras e aprendizado compartilhado.                        │
+│                                                             │
+│                         ┌──────────────────────────────┐    │
+│                         │ Criar conta                  │    │
+│                         │ Preencha os dados abaixo...  │    │
+│                         │                              │    │
+│                         │ Nome completo                │    │
+│                         │ [ João da Silva         ] ✅ │    │
+│                         │                              │    │
+│                         │ E-mail                       │    │
+│                         │ [ usuario@email.com     ] ✅ │    │
+│                         │                              │    │
+│                         │ Nome de usuário              │    │
+│                         │ [ cachorro_ovudo      ]   ✅ │    │
+│                         │                              │    │
+│                         │ Data de nascimento           │    │
+│                         │ [ 16__/11__/__2005__      ✅ │    │
+│                         │                              │    │
+│                         │ Senha                        │    │
+│                         │ [ ••••••••••••          ] ❌ │    │
+│                         │ A senha precisa ter ao       │    │
+│                         │ menos 6 caracteres.          │    │
+│                         │                              │    │
+│                         │ Confirmar senha              │    │
+│                         │ [ ••••••••••••          ] ❌ │    │
+│                         │ [ ] Mostrar                  │    │
+│                         │                              │    │
+│                         │ [       Cadastrar        ]   │    │
+│                         │                              │    │
+│                         │ Já possui uma conta? Entrar  │    │
+│                         └──────────────────────────────┘    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 
