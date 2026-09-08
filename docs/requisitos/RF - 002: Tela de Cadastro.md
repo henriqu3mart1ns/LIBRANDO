@@ -669,8 +669,6 @@ O sistema não consegue acessar o servidor ou o banco de dados durante o process
 - **Estado Normal:** Todos campos em branco, botões habilitados
 - **Estado Preenchido:** Validação visual com checkmark verde
 - **Estado Erro:** Campo inválido destacado em vermelho com mensagem
-- **Estado Carregando:** Mensagem de Processamento da Cadastro 
-- **Estado Sucesso:** Mensagem de confirmação com dados salvos
 
 **Fluxo de Navegação:**
 O fluxo funciona da seguinte maneira:
